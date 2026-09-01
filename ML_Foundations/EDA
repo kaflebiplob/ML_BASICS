@@ -1,0 +1,20 @@
+Steps involved in making a machine learning model.
+
+1. Problem defination
+2. Data Collection
+3. Exploratory Data Analysis
+4. Data Preprocessing/Cleaning
+5. Feature Selection and Engineering
+6. Split the dataset
+7. Model Selection
+8. Model Traning
+9. Model Evaluation
+10. Hyperparameter Tuning
+11. Model Testing/Validation.
+
+
+EDA -> Exploratory Data Analysis = To find the mistakes in datas.
+Data Cleaning = To make data better. Remove duplicates. Null values.Fix Data types and Handle Outliers
+Data Preprocessing = Machine cannot understand String so we need to transform the string to integers.
+
+
