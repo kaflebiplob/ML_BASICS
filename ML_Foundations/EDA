@@ -13,8 +13,8 @@ Steps involved in making a machine learning model.
 11. Model Testing/Validation.
 
 
-EDA -> Exploratory Data Analysis = To find the mistakes in datas.
-Data Cleaning = To make data better. Remove duplicates. Null values.Fix Data types and Handle Outliers
-Data Preprocessing = Machine cannot understand String so we need to transform the string to integers.
-
+** EDA -> Exploratory Data Analysis = To find the mistakes in datas.
+** Data Cleaning = To make data better. Remove duplicates. Null values.Fix Data types and Handle Outliers
+** Data Preprocessing = Machine cannot understand String so we need to transform the string to integers.
+** Feature Engineering = Target based Flags, Time Based Features
 
