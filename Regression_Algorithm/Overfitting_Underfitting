@@ -1,0 +1,13 @@
+Overfitting
+
+Traning-> model perform better (low bias)
+Testing-> model not perform good (high variance)
+
+
+Underfitting
+
+Traning-> model not perform better (high bias)
+Testing-> model not perform good (high variance)
+
+
+perfect model =>(low bias,low variance)
