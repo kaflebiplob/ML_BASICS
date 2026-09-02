@@ -1,1 +1,37 @@
-Regression is about finding patterns in numbers so we can make smart predictions.
+## Regression
+
+**Regression** is a machine learning technique used to find patterns and relationships in numerical data so that we can make predictions about continuous values.
+
+### X-axis and Y-axis
+
+* **X-axis (Independent/Input Variable):** The input variable(s) used to make a prediction.
+* **Y-axis (Dependent/Output Variable):** The output value that we want to predict. In regression, the output is usually a **continuous numerical value**.
+
+### Best-Fit Line
+
+A **best-fit line** is a line that represents the relationship between the input and output data as closely as possible.
+
+The equation of a simple linear regression line is:
+
+**y = mx + c**
+
+Where:
+
+* **y** → Predicted output
+* **m** → Slope of the line
+* **x** → Input/data point
+* **c** → Intercept (the value of y when x = 0)
+
+### Residual Error
+
+**Residual error** is the difference between the actual (observed) value and the predicted value.
+
+**Residual = Actual Value − Predicted Value**
+
+A good regression line is the one that has the **smallest overall residual errors**.
+
+In simple terms:
+
+> **The best-fit line is the line that comes closest to the data points, minimizing the overall prediction error.**
+
+This is commonly done using the **Least Squares Method**, which minimizes the sum of the squared residuals.
