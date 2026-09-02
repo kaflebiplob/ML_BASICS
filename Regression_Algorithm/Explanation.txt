@@ -1,17 +1,40 @@
-## Regression
+# Regression
 
-**Regression** is a machine learning technique used to find patterns and relationships in numerical data so that we can make predictions about continuous values.
+**Regression** is a machine learning technique used to find patterns and relationships in numerical data so that we can make predictions about **continuous numerical values**.
 
-### X-axis and Y-axis
 
-* **X-axis (Independent/Input Variable):** The input variable(s) used to make a prediction.
-* **Y-axis (Dependent/Output Variable):** The output value that we want to predict. In regression, the output is usually a **continuous numerical value**.
+## X-axis and Y-axis
 
-### Best-Fit Line
+### X-axis — Independent/Input Variable
+
+The **X-axis** represents the input variable(s) used to make a prediction.
+
+Examples:
+
+* House size
+* Number of rooms
+* Years of experience
+
+### Y-axis — Dependent/Output Variable
+
+The **Y-axis** represents the output value that we want to predict.
+
+In regression, the output is usually a **continuous numerical value**.
+
+Example:
+
+```text
+X = House Size
+Y = House Price
+```
+
+---
+
+# Best-Fit Line
 
 A **best-fit line** is a line that represents the relationship between the input and output data as closely as possible.
 
-The equation of a simple linear regression line is:
+For simple linear regression, the equation is:
 
 **y = mx + c**
 
@@ -22,16 +45,307 @@ Where:
 * **x** → Input/data point
 * **c** → Intercept (the value of y when x = 0)
 
-### Residual Error
+The goal is to find the values of **m** and **c** that make the predictions as close as possible to the actual values.
+
+---
+
+# Residual Error
 
 **Residual error** is the difference between the actual (observed) value and the predicted value.
 
 **Residual = Actual Value − Predicted Value**
 
-A good regression line is the one that has the **smallest overall residual errors**.
+For example:
 
-In simple terms:
+```text
+Actual value     = 10
+Predicted value  = 6
 
-> **The best-fit line is the line that comes closest to the data points, minimizing the overall prediction error.**
+Residual = 10 − 6
+         = 4
+```
 
-This is commonly done using the **Least Squares Method**, which minimizes the sum of the squared residuals.
+A residual tells us how far a prediction is from the actual value.
+
+A good regression model tries to keep the **overall prediction error as small as possible**.
+
+> **The best-fit line is the line that gives the smallest overall prediction error for the dataset.**
+
+---
+
+# Gradient Descent
+
+**Gradient Descent** is an optimization algorithm used to find better values for the model's parameters, such as **m (slope)** and **c (intercept)**, by minimizing the **loss function**.
+
+Think of Gradient Descent like walking downhill:
+
+```text
+          ●  ← Starting point
+         / \
+        /   \
+       /     \
+      /       \
+     /         \
+    /           \____
+                       ●
+                  Lowest Loss
+```
+
+The goal is to reach the **lowest point**, where the loss is minimized.
+
+---
+
+## Step 1: Start with a Model
+
+Suppose we have a simple linear regression model:
+
+**y = mx + c**
+
+Here:
+
+* **m** = slope
+* **c** = intercept
+* **x** = input
+* **y** = predicted output
+
+Initially, the model starts with some values for **m** and **c**.
+
+For example:
+
+```text
+m = 2.0
+c = 5.0
+```
+
+---
+
+## Step 2: Make Predictions
+
+Using the current values of **m** and **c**, the model makes predictions.
+
+For example:
+
+```text
+Actual value     = 10
+Predicted value  = 6
+```
+
+The prediction is different from the actual value, so there is an error.
+
+---
+
+## Step 3: Calculate the Loss
+
+We need a way to measure **how wrong the model's predictions are overall**.
+
+A common loss function for linear regression is **Mean Squared Error (MSE)**.
+
+It calculates the average of the squared differences between actual and predicted values.
+
+For example, suppose the calculated loss is:
+
+```text
+Loss = 16
+```
+
+The goal of Gradient Descent is to **minimize this loss**.
+
+---
+
+## Step 4: Calculate the Gradient
+
+Now Gradient Descent asks:
+
+> **"In which direction should I change m and c to reduce the loss?"**
+
+The **gradient** tells us the direction in which the loss increases.
+
+Therefore, Gradient Descent moves in the **opposite direction of the gradient** to reduce the loss.
+
+Think of it like standing on a hill:
+
+```text
+             ●
+            / \
+           /   \
+          /     \
+         /       \
+        /         \
+       /           \____
+                         ↓
+                    Lowest Loss
+```
+
+The algorithm keeps taking steps toward the lower loss.
+
+---
+
+## Step 5: Update the Parameters
+
+Gradient Descent changes **m** and **c** slightly based on the gradient.
+
+For example:
+
+```text
+Before update:
+
+m = 2.0
+c = 5.0
+Loss = 16
+```
+
+After one update:
+
+```text
+m = 1.8
+c = 4.7
+Loss = 10
+```
+
+The loss decreased:
+
+```text
+16 → 10
+```
+
+This means the new values of **m** and **c** produced better predictions.
+
+---
+
+## Step 6: Repeat the Process
+
+Gradient Descent repeatedly performs the same process:
+
+```text
+Calculate predictions
+        ↓
+Calculate loss
+        ↓
+Calculate gradient
+        ↓
+Update m and c
+        ↓
+Calculate loss again
+        ↓
+Repeat
+```
+
+For example:
+
+```text
+Iteration 1 → Loss = 16
+Iteration 2 → Loss = 10
+Iteration 3 → Loss = 6
+Iteration 4 → Loss = 3
+Iteration 5 → Loss = 1.5
+Iteration 6 → Loss = 1.1
+Iteration 7 → Loss = 1.0
+```
+
+As the model improves, the loss generally decreases.
+
+---
+
+# Gradient Descent / Loss Curve
+
+After every iteration, we can **record the loss**.
+
+Then we plot:
+
+* **X-axis → Iterations**
+* **Y-axis → Loss**
+
+For example:
+
+```text
+Loss
+ ↑
+16 | ●
+   |  \
+10 |   ●
+   |    \
+ 6 |     ●
+   |       \
+ 3 |        ●
+   |          \
+ 1 |            ●──●──●
+   +------------------------→ Iterations
+     1  2  3  4  5  6  7
+```
+
+This graph is called a **Loss Curve** or **Gradient Descent Curve**.
+
+It shows how the loss changes as Gradient Descent updates the model.
+
+---
+
+# Complete Gradient Descent Process
+
+```text
+Choose initial m and c
+        ↓
+Make predictions
+        ↓
+Calculate loss
+        ↓
+Calculate gradient
+        ↓
+Update m and c
+        ↓
+Calculate loss again
+        ↓
+Repeat many times
+        ↓
+Record loss after each iteration
+        ↓
+Plot Iterations vs Loss
+        ↓
+📉 Loss / Gradient Descent Curve
+```
+
+---
+
+# Important Terms
+
+### Gradient Descent
+
+**Gradient Descent is the algorithm used to find better parameter values by minimizing the loss.**
+
+### Loss Function
+
+**The loss function measures how wrong the model's predictions are.**
+
+### Gradient
+
+**The gradient tells us how the loss changes when the model's parameters change.**
+
+### Iteration
+
+**An iteration is one complete update of the model's parameters.**
+
+### Learning Rate
+
+The **learning rate** controls how big each update step is.
+
+```text
+Large learning rate → Bigger steps
+Small learning rate → Smaller steps
+```
+
+---
+
+## In Simple Words
+
+> **Regression** finds a relationship between input and output data.
+
+> **Best-fit line** represents that relationship.
+
+> **Loss** tells us how wrong the predictions are.
+
+> **Gradient Descent** changes the model's parameters to reduce the loss.
+
+> **Loss Curve** shows how the loss decreases during the learning process.
+
+### Easy way to remember:
+
+**Predict → Calculate Loss → Find Gradient → Update → Repeat → Minimize Loss**
