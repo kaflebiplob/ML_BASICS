@@ -1,0 +1,1 @@
+Regression is about finding patterns in numbers so we can make smart predictions.
