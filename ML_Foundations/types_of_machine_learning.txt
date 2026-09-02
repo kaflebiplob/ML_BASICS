@@ -1,5 +1,58 @@
-Types of machine learning
+## Types of Machine Learning
 
-1. Supervised learning
-2. Unsupervised learning
-3. Reinforcement learning -> trial and error
+There are three main types of machine learning:
+
+1. **Supervised Learning**
+   The model is trained using labeled data, where both the input and the correct output are provided.
+   Examples: Classification and Regression.
+
+2. **Unsupervised Learning**
+   The model is trained using unlabeled data and tries to find patterns, relationships, or groups within the data.
+   Examples: Clustering and Dimensionality Reduction.
+
+3. **Reinforcement Learning**
+   The model learns through **trial and error** by interacting with an environment. It receives rewards for good actions and penalties for incorrect actions.
+
+### Machine Learning Algorithms
+
+We use different machine learning algorithms to train and build a model. The choice of algorithm depends on the type of problem and the data.
+
+After creating and training the model, we need to **evaluate its performance** to determine how well it makes predictions.
+
+## Performance Metrics
+
+Different metrics are used depending on the type of machine learning problem.
+
+### R² (R-Squared)
+
+R² is commonly used to evaluate **regression models**. It measures how well the model explains the variation in the target variable.
+
+$$
+R^2 = 1 - \frac{\text{Sum of Squared Residuals}}{\text{Total Sum of Squares}}
+$$
+
+Where:
+
+* **Residual** = Actual value − Predicted value
+* **Sum of Squared Residuals (SSR)** = Sum of the squared differences between actual and predicted values.
+* **Total Sum of Squares (SST)** = Total variation of the actual values around their mean.
+
+An R² value closer to **1** generally indicates that the model explains more of the variation in the data.
+
+### Adjusted R²
+
+**Adjusted R²** is a modified version of R² that takes into account the **number of features (predictors)** used in the model. It is useful when comparing regression models with different numbers of features.
+
+
+\text{Adjusted } R^2
+=
+1-\frac{(1-R^2)(n-1)}{n-p-1}
+$$
+
+Where:
+
+* **R²** = R-squared value
+* **n** = Number of observations (rows/data points)
+* **p** = Number of independent variables/features
+
+Unlike R², Adjusted R² **penalizes the model for adding unnecessary features**. Therefore, adding a feature does not automatically increase Adjusted R² unless that feature improves the model sufficiently.
