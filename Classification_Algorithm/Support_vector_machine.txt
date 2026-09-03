@@ -1,1 +1,159 @@
 Support Vector Method (SVM)
+
+wx + b =0
+where 
+w= weight
+x=point where we want to predict
+b=bias
+
+
+hyperplane => A line that seprate two cateogories
+Margin => the space between the line and nearest point.
+Support Vector => The closest ball(category) to margin that support the line.
+
+W use kernals to distinguish between the two points 
+
+
+******************Better Explanation  with the help of AI****************************
+
+
+Support Vector Machine (SVM)
+
+Support Vector Machine (SVM) is a supervised machine learning algorithm mainly used for classification.
+
+It tries to find the best boundary that separates different classes of data.
+
+Hyperplane
+
+A hyperplane is the decision boundary that separates two classes.
+
+In 2D, the hyperplane is a line.
+In 3D, it is a plane.
+In higher dimensions, it is called a hyperplane.
+
+The equation of a hyperplane is:
+
+w^T x + b = 0
+
+
+Where:
+
+w = Weight
+x = Input data point
+b = Bias
+
+
+Weight (w):
+
+Determines the direction/orientation of the hyperplane.
+
+Input point (x):
+
+The data point that we want to classify.
+
+Bias (b):
+
+Shifts the position of the hyperplane.
+Margin
+
+Margin is the distance between the hyperplane (decision boundary) and the closest data points from each class.
+
+SVM tries to find the hyperplane with the maximum possible margin.
+
+Why maximize the margin?
+
+A larger margin generally helps the model perform better on new/unseen data.
+
+Support Vectors
+
+Support vectors are the data points that are closest to the hyperplane.
+
+They are very important because they determine the position of the optimal decision boundary.
+
+In simple words:
+
+Support Vectors = The closest data points that support/define the decision boundary.
+
+How SVM Works
+
+Suppose we have two classes:
+
+Class A = ●
+Class B = ▲
+
+
+SVM tries to find a boundary that:
+
+Separates the two classes.
+
+Maximizes the margin.
+
+Uses the closest points (support vectors) to determine the boundary.
+
+Kernel Trick
+
+Sometimes the data cannot be separated using a straight line.
+
+For example, if the data has a complex/non-linear pattern, a simple hyperplane may not be enough.
+
+In this situation, SVM can use a kernel.
+
+A kernel helps SVM handle non-linearly separable data by effectively mapping the data into a higher-dimensional feature space, where the classes may become separable by a hyperplane.
+
+Common SVM kernels:
+
+Linear Kernel
+Polynomial Kernel
+RBF (Radial Basis Function) Kernel
+Sigmoid Kernel
+
+Important:
+
+The kernel does NOT simply distinguish between two points.
+
+Instead, it helps SVM find a suitable decision boundary when the data cannot be separated well using a straight line in the original feature space.
+
+Easy Example
+
+Imagine we have students divided into two groups:
+
+Group A = Students who passed
+Group B = Students who failed
+
+
+SVM looks at the data and tries to find the best boundary that separates the two groups.
+
+The closest students to the boundary are called Support Vectors.
+
+SVM chooses the boundary that gives the maximum margin between the two groups.
+
+Quick Summary
+
+SVM:
+A machine learning algorithm used mainly for classification.
+
+Hyperplane:
+The decision boundary that separates classes.
+
+Margin:
+The distance between the hyperplane and the closest data points.
+
+Support Vectors:
+The closest data points that help determine the hyperplane.
+
+Weight (w):
+Controls the orientation of the hyperplane.
+
+Bias (b):
+Shifts the hyperplane.
+
+Kernel:
+Helps SVM handle non-linear data.
+
+Easy way to remember:
+
+SVM
+-> Find the best separating boundary
+-> Maximize the margin
+-> Closest points are Support Vectors
+-> Use Kernels when the data is not linearly separable
