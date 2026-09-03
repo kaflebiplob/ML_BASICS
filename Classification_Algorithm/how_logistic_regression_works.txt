@@ -37,11 +37,11 @@ Logistic Regression → Log Loss Function / Binary Cross Entropy
 Log Loss Formula
 
 [
-Loss=-[y\log(\hat{y})+(1-y)\log(1-\hat{y})]
+Loss=-1/m[y\log(\hat{y})+(1-y)\log(1-\hat{y})]
 ]
 
 Where:
-
+m= number of samples
 y = actual value
 ŷ = predicted probability
 
@@ -50,11 +50,4 @@ If predicted probability = 0.99 and actual obesity = 1
 
 If predicted probability = 0.101 and actual obesity = 1
 → Very high loss → Model gets a penalty
-
-K-nearest Algorithm (KNN).
-
-
-Support Vector method (SVM).
-
-
 
