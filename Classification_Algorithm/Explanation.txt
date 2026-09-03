@@ -1,23 +1,55 @@
-What is classification algorithm?
+What is Classification Algorithm?
 
-=> A classification algorithm is a type  of machine learning algorithm used to predict a category or a class label for given input.
+A classification algorithm is a type of machine learning algorithm used to predict a category or class label for a given input.
 
 Logistic Regression
 
-Problems
- **Outliers will influence the  straight line
- **Result can be greater than 1  and less than 0.
+Problems:
 
-Solutions
-** We use the s shaped curve  we will use SIGMOID activation function.
-Signoid have formula 
+Outliers can influence the straight line.
+Result can be greater than 1 and less than 0.
 
-where 
-e=eulers number -> A mathematical constant =2.71828  (Gives smooth curve)
+Solution:
 
-Linear regression                                     Logistic regression
-to create best fit line by finding  theta values      to create best squashed line by finding theta values.
-cost function                                         log loss function (binary cross entropy)  
+We use an S-shaped curve called the Sigmoid Function.
+
+Sigmoid Formula:
+
+[
+\sigma(z)={1}/{1+e^{-z}}
+]
+
+Where:
+
+e = Euler's number = 2.71828
+(It gives a smooth curve.)
+
+Linear Regression vs Logistic Regression
+
+Linear Regression → Creates the best-fit line by finding θ (theta) values.
+
+Logistic Regression → Creates the best-fit S-shaped curve by finding θ (theta) values.
+
+Linear Regression → Cost Function
+
+Logistic Regression → Log Loss Function / Binary Cross Entropy
+
+Log Loss Formula
+
+[
+Loss=-[y\log(\hat{y})+(1-y)\log(1-\hat{y})]
+]
+
+Where:
+
+y = actual value
+ŷ = predicted probability
+
+If predicted probability = 0.99 and actual obesity = 1
+→ Very less loss
+
+If predicted probability = 0.101 and actual obesity = 1
+→ Very high loss → Model gets a penalty
 
 K-nearest Algorithm (KNN).
 
