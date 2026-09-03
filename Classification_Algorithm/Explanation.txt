@@ -1,0 +1,14 @@
+What is classification algorithm?
+
+=> A classification algorithm is a type  of machine learning algorithm used to predict a category or a class label for given input.
+
+Logistic Regression
+
+
+K-nearest Algorithm (KNN).
+
+
+Support Vector method (SVM).
+
+
+
