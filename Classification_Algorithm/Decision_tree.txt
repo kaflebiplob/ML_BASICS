@@ -1,2 +1,16 @@
-Decision Tree
- 1.Entrogy  and Information Gain  for choosing root node.
+## Decision Tree
+
+A **Decision Tree** is a supervised learning algorithm used for both classification and regression.
+
+### Basic Process
+
+1. **Start with the dataset.**
+2. Calculate **Entropy** for the dataset.
+3. Calculate **Information Gain** for each feature.
+4. Select the feature with the **highest Information Gain** as the root node.
+5. **Split the data** based on the selected feature.
+6. Repeat the same process for each branch.
+7. **Stop splitting** when:
+
+   * All data in a branch belongs to the same class (**pure**).
+   * The **maximum depth** is reached.
