@@ -1,0 +1,2 @@
+Decision Tree
+ 1.Entrogy  and Information Gain  for choosing root node.
