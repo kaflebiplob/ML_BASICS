@@ -1,0 +1,9 @@
+KNN (K-Nearest Neighbour)
+
+1. Define K Value.
+2. calculate the distance from all points (euclidean distance)
+3. Sort all the distance
+4. Majority Count.
+
+Other than classification -> mean of 5 nearest neighbour.
+We can use the n dimensions. 
