@@ -4,6 +4,20 @@ What is classification algorithm?
 
 Logistic Regression
 
+Problems
+ **Outliers will influence the  straight line
+ **Result can be greater than 1  and less than 0.
+
+Solutions
+** We use the s shaped curve  we will use SIGMOID activation function.
+Signoid have formula 
+
+where 
+e=eulers number -> A mathematical constant =2.71828  (Gives smooth curve)
+
+Linear regression                                     Logistic regression
+to create best fit line by finding  theta values      to create best squashed line by finding theta values.
+cost function                                         log loss function (binary cross entropy)  
 
 K-nearest Algorithm (KNN).
 
