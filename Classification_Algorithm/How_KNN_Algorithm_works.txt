@@ -1,9 +1,26 @@
-KNN (K-Nearest Neighbour)
+## KNN (K-Nearest Neighbors)
 
-1. Define K Value.
-2. calculate the distance from all points (euclidean distance)
-3. Sort all the distance
-4. Majority Count.
+1. **Define the K value.**
+2. **Calculate the distance** from the new point to all other points using **Euclidean Distance**.
 
-Other than classification -> mean of 5 nearest neighbour.
-We can use the n dimensions. 
+$$
+d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
+$$
+
+3. **Sort all the distances** from smallest to largest.
+4. **Select the K nearest neighbors.**
+5. **Majority Count** → The class with the most neighbors is the prediction.
+
+### Other than Classification
+
+For regression, we take the **mean (average) of the K nearest neighbors**.
+
+### Dimensions
+
+KNN can work with **N dimensions (features)**.
+
+### Hyperparameter
+
+**K → Number of nearest neighbors**
+
+K is often chosen as an **odd number** in binary classification to avoid ties.
