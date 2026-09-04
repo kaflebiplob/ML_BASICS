@@ -1,0 +1,6 @@
+Model Tuning 
+
+To find the best combination of hyper parameter
+So that the model performs better on new ,unseen data not jusst traning data
+
+Tuning model helps to squeeze out the best possibility(performance) from our model
