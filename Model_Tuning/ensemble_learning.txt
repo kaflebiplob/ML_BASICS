@@ -1,0 +1,29 @@
+## Ensemble Learning
+
+**Ensemble Learning** is a machine learning technique where we combine the predictions of **multiple models** to make a better and more reliable prediction.
+
+The basic idea is:
+
+> **“Listen to the crowd.”**
+
+Instead of relying on a single model, we use multiple models and combine their results.
+
+### Machine Learning
+
+A basic machine learning process is:
+
+```text
+Training Data → Train the Model → Test the Model → Prediction
+```
+
+In **Ensemble Learning**, multiple models work together:
+
+```text
+Data
+ ↓
+Multiple Models
+ ↓
+Combine Their Predictions
+ ↓
+Final Prediction
+```
