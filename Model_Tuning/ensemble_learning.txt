@@ -27,3 +27,20 @@ Combine Their Predictions
  ↓
 Final Prediction
 ```
+
+### Types of Ensemble Learning
+
+1. **Bagging**
+
+   * Trains multiple models independently using different samples of the training data.
+   * Their predictions are then combined to make the final prediction.
+
+2. **Boosting**
+
+   * Trains models sequentially, where each new model focuses more on the mistakes made by previous models.
+   * The models are combined to produce a stronger model.
+
+3. **Stacking**
+
+   * Combines predictions from multiple different models.
+   * Another model, called a **meta-model**, learns how to combine those predictions to make the final prediction.
