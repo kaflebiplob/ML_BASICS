@@ -118,3 +118,15 @@ Common Types of Unsupervised Learning
    Epsilon (eps) -> Maximum distance between points to be considered neighbors.
 
    MinPts -> Minimum number of points required to form a dense region.
+
+3. Dimensionality Reduction
+   
+   1. Very difficult to find patterns.
+   2. Fail in high dimension algorithm  like => KNN, K-Means, DB Stacking
+   3. Storage
+   4. Model traning time.
+
+
+   150 dimension ----> 50 dimension 
+   work of DR
+   
