@@ -96,3 +96,11 @@ Common Types of Unsupervised Learning
 
    As K increases, WCSS decreases.
    The point where the decrease starts becoming smaller is called the Elbow Point.
+
+
+
+Disadvantages
+
+1. we need to initialize the k value.
+2. outliers will move the center points.
+3. Non Circular Data (this is type of data hard to make Circular cluster).
