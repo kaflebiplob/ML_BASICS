@@ -1,0 +1,30 @@
+## Unsupervised Learning
+
+Unsupervised learning is a type of machine learning where the data does not have labels or predefined correct answers.
+
+The model learns from the data by itself and tries to find patterns, structures, similarities, or relationships within the data.
+
+Example:
+Grouping customers based on their purchasing behavior without knowing their customer categories beforehand.
+
+
+## Difference Between Supervised and Unsupervised Learning
+
+Supervised Learning:
+- Data has labels (known answers).
+- The model learns from labeled data.
+- Used to make predictions or classifications.
+- Example: Predicting house prices or classifying emails as spam or not spam.
+
+Unsupervised Learning:
+- Data does not have labels (no known answers).
+- The model finds patterns or structures by itself.
+- Used to discover hidden patterns or groups in data.
+- Example: Grouping customers based on their purchasing behavior.
+
+
+Simple Difference:
+
+Supervised Learning → Learn from labeled data → Predict the answer
+
+Unsupervised Learning → Learn from unlabeled data → Find patterns or groups
