@@ -1,79 +1,72 @@
-## Unsupervised Learning
+Unsupervised Learning
 
 Unsupervised learning is a type of machine learning where the data does not have labels or predefined correct answers.
 
 The model learns from the data by itself and tries to find patterns, structures, similarities, or relationships within the data.
 
-### Example
-
+Example:
 Grouping customers based on their purchasing behavior without knowing their customer categories beforehand.
 
-### Use Cases
 
-* **Customer Segmentation** → Group customers based on their behavior or purchasing patterns.
-* **Market Analysis** → Find groups of customers with similar interests.
-* **Anomaly Detection** → Find unusual or abnormal data points.
-* **Recommendation Systems** → Find similarities between users or products.
-* **Data Exploration** → Discover hidden patterns and relationships in large datasets.
+Use Cases
 
-## Difference Between Supervised and Unsupervised Learning
-
-### Supervised Learning
-
-* Data has labels (known answers).
-* The model learns from labeled data.
-* Used to make predictions or classifications.
-* Example: Predicting house prices or classifying emails as spam or not spam.
-
-### Use Cases
-
-* **House Price Prediction** → Predict the price of a house.
-* **Spam Detection** → Classify emails as spam or not spam.
-* **Disease Prediction** → Predict whether a patient has a particular disease.
-* **Image Classification** → Classify images into categories.
-* **Sales Prediction** → Predict future sales.
-
-### Unsupervised Learning
-
-* Data does not have labels (no known answers).
-* The model finds patterns or structures by itself.
-* Used to discover hidden patterns or groups in data.
-* Example: Grouping customers based on their purchasing behavior.
-
-### Use Cases
-
-* **Customer Segmentation** → Group customers with similar behavior.
-* **Market Segmentation** → Find different groups in a market.
-* **Anomaly Detection** → Detect unusual patterns in data.
-* **Product Grouping** → Group similar products together.
-* **Pattern Discovery** → Find hidden relationships in data.
-
-## Simple Difference
-
-Supervised Learning → Learn from labeled data → Predict the answer
-
-Unsupervised Learning → Learn from unlabeled data → Find patterns or groups
+- Customer Segmentation -> Group customers based on their behavior or purchasing patterns.
+- Market Analysis -> Find groups of customers with similar interests.
+- Anomaly Detection -> Find unusual or abnormal data points.
+- Recommendation Systems -> Find similarities between users or products.
+- Data Exploration -> Discover hidden patterns and relationships in data.
 
 
-Commom types of unsupervised learning
-1. Clustering 
- i. K-Means Clustering
+Difference Between Supervised and Unsupervised Learning
 
-   Define n clusters.
-   Initialize centroids.
-   Assign clusters.
-   reassign the cluster points.
-   again repeat step 3 and step 4.
-   Finish making the cluster
+Supervised Learning
 
-For making the cluster and deciding the (K Value) we need to use the ELBOW method.
+- Data has labels (known answers).
+- The model learns from labeled data.
+- Used to make predictions or classifications.
+- Example: Predicting house prices or classifying emails as spam or not spam.
 
+Use Cases:
+
+- House Price Prediction -> Predict the price of a house.
+- Spam Detection -> Classify emails as spam or not spam.
+- Disease Prediction -> Predict whether a patient has a particular disease.
+- Image Classification -> Classify images into categories.
+- Sales Prediction -> Predict future sales.
+
+
+Unsupervised Learning
+
+- Data does not have labels (no known answers).
+- The model finds patterns or structures by itself.
+- Used to discover hidden patterns or groups in data.
+- Example: Grouping customers based on their purchasing behavior.
+
+Use Cases:
+
+- Customer Segmentation -> Group customers with similar behavior.
+- Market Segmentation -> Find different groups in a market.
+- Anomaly Detection -> Detect unusual patterns in data.
+- Product Grouping -> Group similar products together.
+- Pattern Discovery -> Find hidden relationships in data.
+
+
+Simple Difference
+
+Supervised Learning -> Learn from labeled data -> Predict the answer
+
+Unsupervised Learning -> Learn from unlabeled data -> Find patterns or groups
 
 
 Common Types of Unsupervised Learning
 
 1. Clustering
+
    i. K-Means Clustering
+
+   K-Means is a clustering algorithm that divides data into K groups (clusters).
+
+   Steps:
 
    1. Define the number of clusters (K).
    2. Initialize the centroids.
@@ -82,8 +75,12 @@ Common Types of Unsupervised Learning
    5. Repeat steps 3 and 4 until the clusters become stable.
    6. Finish making the clusters.
 
-   Elbow Method:
-   Used to find the best K value (number of clusters) for K-Means.
+
+   Elbow Method
+
+   The Elbow Method is used to find the best K value (number of clusters) for K-Means.
+
+   Steps:
 
    1. Run K-Means with different K values.
    2. Calculate WCSS (Within-Cluster Sum of Squares) for each K.
@@ -92,15 +89,32 @@ Common Types of Unsupervised Learning
    5. The Elbow Point is usually selected as the best K value.
 
    K Value -> Number of clusters
+
    WCSS -> Measures how close the data points are to their cluster centroid.
 
    As K increases, WCSS decreases.
    The point where the decrease starts becoming smaller is called the Elbow Point.
 
 
+   Disadvantages of K-Means
 
-Disadvantages
+   1. We need to define the K value.
+   2. Outliers can affect the centroid positions.
+   3. It does not work well with non-circular or irregularly shaped clusters.
 
-1. we need to initialize the k value.
-2. outliers will move the center points.
-3. Non Circular Data (this is type of data hard to make Circular cluster).
+
+2. DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+
+   DBSCAN is a density-based clustering algorithm.
+
+   1. Non-parametric algorithm.
+   2. Uses Epsilon (eps) distance.
+   3. Uses MinPts (minimum number of points).
+   4. Groups points that are closely packed together.
+   5. Identifies points in low-density areas as noise or outliers.
+
+   Important Parameters:
+
+   Epsilon (eps) -> Maximum distance between points to be considered neighbors.
+
+   MinPts -> Minimum number of points required to form a dense region.
