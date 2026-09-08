@@ -1,0 +1,199 @@
+MATPLOTLIB - BEGINNER NOTES
+WHAT IS MATPLOTLIB?
+
+Matplotlib is a Python library used for creating graphs and
+visualizing data.
+
+Import Matplotlib:
+
+import matplotlib.pyplot as plt
+
+BASIC LINE GRAPH
+
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 15, 30, 40]
+
+plt.plot(x, y)
+plt.show()
+
+plot() is used to create a line graph.
+
+TITLE AND LABELS
+
+plt.title("My Graph")
+plt.xlabel("X Axis")
+plt.ylabel("Y Axis")
+
+plt.show()
+
+GRID
+
+plt.grid()
+
+Grid makes the graph easier to read.
+
+MARKER
+
+Markers show individual data points.
+
+plt.plot(x, y, marker='o')
+
+Common markers:
+
+'o' = circle
+'s' = square
+'*' = star
+'^' = triangle
+
+COLOR
+
+Change line color:
+
+plt.plot(x, y, color='red')
+
+Other common colors:
+
+blue
+green
+black
+orange
+purple
+
+LINE STYLE
+
+plt.plot(x, y, linestyle='--')
+
+Common styles:
+
+'-' = solid
+'--' = dashed
+':' = dotted
+
+LEGEND
+
+A legend tells us what the graph represents.
+
+plt.plot(x, y, label='Sales')
+plt.legend()
+
+plt.show()
+
+BAR CHART
+
+Bar charts are used to compare categories.
+
+names = ['Ram', 'Hari', 'Shiva']
+salary = [80000, 50000, 115000]
+
+plt.bar(names, salary)
+
+plt.xlabel("Name")
+plt.ylabel("Salary")
+plt.title("Employee Salary")
+
+plt.show()
+
+SCATTER PLOT
+
+Scatter plots show the relationship between two variables.
+
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 15, 30, 40]
+
+plt.scatter(x, y)
+plt.show()
+
+HISTOGRAM
+
+A histogram shows the distribution of numerical data.
+
+age = [20, 22, 25, 25, 30, 32, 35, 40, 45]
+
+plt.hist(age, bins=5)
+plt.show()
+
+PIE CHART
+
+A pie chart shows percentages or proportions.
+
+teams = ['HR', 'CEO', 'CTO']
+employees = [20, 30, 50]
+
+plt.pie(
+employees,
+labels=teams,
+autopct='%1.1f%%'
+)
+
+plt.show()
+
+SUBPLOTS
+
+Subplots allow us to create multiple graphs in one figure.
+
+fig, ax = plt.subplots(2, 2)
+
+ax[0, 0].plot(x, y)
+ax[0, 1].bar(names, salary)
+ax[1, 0].scatter(x, y)
+ax[1, 1].hist(age)
+
+plt.show()
+
+FIGURE SIZE
+
+Change graph size:
+
+plt.figure(figsize=(8, 5))
+
+SAVE GRAPH
+
+Save the graph as an image:
+
+plt.savefig("graph.png")
+
+Then display it:
+
+plt.show()
+
+COMMON FUNCTIONS
+
+plt.plot() -> Line graph
+plt.bar() -> Bar chart
+plt.scatter() -> Scatter plot
+plt.hist() -> Histogram
+plt.pie() -> Pie chart
+plt.title() -> Graph title
+plt.xlabel() -> X-axis label
+plt.ylabel() -> Y-axis label
+plt.legend() -> Legend
+plt.grid() -> Grid
+plt.show() -> Display graph
+plt.savefig() -> Save graph
+
+SIMPLE MATPLOTLIB WORKFLOW
+Import Matplotlib
+Prepare data
+Choose graph type
+Plot the data
+Add title and labels
+Add legend/grid if needed
+Show or save the graph
+
+Example:
+
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [10, 20, 15, 30]
+
+plt.plot(x, y, marker='o', color='blue')
+
+plt.title("Sales")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.grid()
+plt.show()
+
+Matplotlib is mainly used to understand data visually,
+find trends, compare values, and analyze distributions.
