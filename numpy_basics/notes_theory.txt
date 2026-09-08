@@ -1,0 +1,3199 @@
+============================================================
+                         NUMPY
+============================================================
+============================================================
+                         NUMPY
+============================================================
+
+1. INTRODUCTION TO NUMPY
+------------------------
+
+NumPy stands for Numerical Python.
+
+NumPy is a Python library used for numerical computing. It provides
+powerful data structures and mathematical functions for working with
+large amounts of numerical data.
+
+The most important data structure in NumPy is the NumPy array
+(ndarray).
+
+NumPy is widely used in:
+
+- Data Science
+- Machine Learning
+- Artificial Intelligence
+- Scientific Computing
+- Statistical Computing
+- Mathematical Operations
+- Image Processing
+- Linear Algebra
+
+NumPy forms the foundation of many Python data science libraries such
+as Pandas, SciPy, Scikit-learn, and Matplotlib.
+
+
+2. WHY NUMPY?
+-------------
+
+Python lists can store numerical data, but they are relatively slow
+for large-scale numerical operations.
+
+NumPy provides:
+
+- Faster numerical operations
+- Efficient memory usage
+- Multidimensional arrays
+- Vectorized operations
+- Broadcasting
+- Mathematical functions
+- Statistical functions
+- Linear algebra operations
+- Random number generation
+
+
+3. INSTALLING NUMPY
+-------------------
+
+Install NumPy using pip:
+
+pip install numpy
+
+If using a Jupyter Notebook:
+
+!pip install numpy
+
+
+4. IMPORTING NUMPY
+------------------
+
+The standard way to import NumPy is:
+
+import numpy as np
+
+Here:
+
+numpy -> library name
+np    -> commonly used alias for NumPy
+
+
+5. NUMPY ARRAY
+--------------
+
+A NumPy array is a data structure used to store numerical values in
+one or more dimensions.
+
+Example:
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+
+A NumPy array is also called an ndarray
+(N-dimensional array).
+
+
+6. NUMPY ARRAY VS PYTHON LIST
+-----------------------------
+
+Python List:
+
+- General-purpose data structure
+- Can contain different data types
+- Slower for numerical operations
+- Higher memory usage
+- Does not naturally support vectorized mathematical operations
+
+NumPy Array:
+
+- Designed mainly for numerical computing
+- Usually contains elements of the same data type
+- Faster numerical operations
+- More memory efficient
+- Supports vectorization
+- Supports multidimensional data
+- Provides many mathematical functions
+
+
+Example:
+
+Python list:
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+a + b
+
+Output:
+
+[1, 2, 3, 4, 5, 6]
+
+NumPy:
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+a + b
+
+Output:
+
+[5 7 9]
+
+
+7. FEATURES OF NUMPY
+--------------------
+
+Important features of NumPy:
+
+1. Multidimensional arrays
+2. Fast numerical computation
+3. Vectorized operations
+4. Broadcasting
+5. Memory efficiency
+6. Mathematical functions
+7. Statistical functions
+8. Linear algebra support
+9. Random number generation
+10. Array manipulation
+11. Sorting and searching
+12. Integration with other Python libraries
+
+
+8. DIMENSIONS OF NUMPY ARRAYS
+-----------------------------
+
+NumPy arrays can have different dimensions.
+
+0-D Array
+---------
+
+A scalar value is a 0-dimensional array.
+
+Example:
+
+arr = np.array(10)
+
+
+1-D Array
+---------
+
+A one-dimensional array is similar to a list.
+
+Example:
+
+arr = np.array([1, 2, 3, 4])
+
+
+2-D Array
+---------
+
+A two-dimensional array contains rows and columns.
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+
+3-D Array
+---------
+
+A three-dimensional array contains multiple 2-D arrays.
+
+Example:
+
+arr = np.array([
+    [
+        [1, 2],
+        [3, 4]
+    ],
+    [
+        [5, 6],
+        [7, 8]
+    ]
+])
+
+
+N-D Array
+---------
+
+NumPy can create arrays with more than three dimensions.
+
+The number of dimensions is called the array's ndim.
+
+
+9. IMPORTANT ARRAY ATTRIBUTES
+-----------------------------
+
+NumPy arrays have several important attributes.
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+
+ndim
+----
+
+Returns the number of dimensions.
+
+arr.ndim
+
+Output:
+
+2
+
+
+shape
+-----
+
+Returns the size of each dimension.
+
+arr.shape
+
+Output:
+
+(2, 3)
+
+This means:
+
+2 rows
+3 columns
+
+
+size
+----
+
+Returns the total number of elements.
+
+arr.size
+
+Output:
+
+6
+
+
+dtype
+-----
+
+Returns the data type of the elements.
+
+arr.dtype
+
+
+itemsize
+--------
+
+Returns the number of bytes used by each element.
+
+arr.itemsize
+
+
+10. CREATING NUMPY ARRAYS
+-------------------------
+
+Using np.array()
+----------------
+
+arr = np.array([1, 2, 3, 4])
+
+
+Using zeros()
+-------------
+
+Creates an array filled with zeros.
+
+np.zeros(5)
+
+Output:
+
+[0. 0. 0. 0. 0.]
+
+
+Using ones()
+------------
+
+Creates an array filled with ones.
+
+np.ones(5)
+
+Output:
+
+[1. 1. 1. 1. 1.]
+
+
+Using full()
+------------
+
+Creates an array filled with a specified value.
+
+np.full(5, 10)
+
+Output:
+
+[10 10 10 10 10]
+
+
+Using arange()
+--------------
+
+Creates values within a specified range.
+
+np.arange(1, 10)
+
+Output:
+
+[1 2 3 4 5 6 7 8 9]
+
+
+Using arange() with step:
+
+np.arange(1, 10, 2)
+
+Output:
+
+[1 3 5 7 9]
+
+
+Using linspace()
+----------------
+
+Creates evenly spaced numbers between two values.
+
+np.linspace(0, 10, 5)
+
+Output:
+
+[0.  2.5 5.  7.5 10.]
+
+
+Using identity()
+----------------
+
+Creates an identity matrix.
+
+np.identity(3)
+
+Output:
+
+[[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+
+
+11. DATA TYPES IN NUMPY
+-----------------------
+
+NumPy supports different numerical data types.
+
+Common data types:
+
+int8
+int16
+int32
+int64
+
+uint8
+uint16
+uint32
+uint64
+
+float16
+float32
+float64
+
+complex64
+complex128
+
+bool
+str
+object
+
+
+Example:
+
+arr = np.array([1, 2, 3], dtype=np.float64)
+
+
+12. TYPE CONVERSION
+-------------------
+
+The astype() method can be used to convert the data type.
+
+Example:
+
+arr = np.array([1, 2, 3])
+
+new_arr = arr.astype(float)
+
+
+13. INDEXING
+------------
+
+Indexing means accessing individual elements from an array.
+
+NumPy uses zero-based indexing.
+
+Example:
+
+arr = np.array([10, 20, 30, 40, 50])
+
+arr[0]
+
+Output:
+
+10
+
+arr[2]
+
+Output:
+
+30
+
+
+14. NEGATIVE INDEXING
+---------------------
+
+Negative indexing starts from the end.
+
+arr[-1]
+
+Returns the last element.
+
+arr[-2]
+
+Returns the second-last element.
+
+
+15. 2-D ARRAY INDEXING
+----------------------
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+arr[0, 1]
+
+Output:
+
+2
+
+Here:
+
+0 -> row index
+1 -> column index
+
+
+16. SLICING
+-----------
+
+Slicing is used to extract a portion of an array.
+
+Syntax:
+
+array[start:stop:step]
+
+
+Example:
+
+arr = np.array([10, 20, 30, 40, 50])
+
+arr[1:4]
+
+Output:
+
+[20 30 40]
+
+
+Example:
+
+arr[::2]
+
+Output:
+
+[10 30 50]
+
+
+17. 2-D ARRAY SLICING
+---------------------
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+
+arr[0:2, 1:3]
+
+This selects:
+
+Rows 0 to 1
+Columns 1 to 2
+
+
+18. ARRAY OPERATIONS
+--------------------
+
+NumPy supports element-wise arithmetic operations.
+
+Example:
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+
+Addition:
+
+a + b
+
+Output:
+
+[5 7 9]
+
+
+Subtraction:
+
+a - b
+
+Output:
+
+[-3 -3 -3]
+
+
+Multiplication:
+
+a * b
+
+Output:
+
+[4 10 18]
+
+
+Division:
+
+a / b
+
+
+Power:
+
+a ** 2
+
+
+19. SCALAR OPERATIONS
+---------------------
+
+A scalar operation applies a value to every element.
+
+Example:
+
+arr = np.array([1, 2, 3, 4])
+
+arr + 10
+
+Output:
+
+[11 12 13 14]
+
+arr * 2
+
+Output:
+
+[2 4 6 8]
+
+
+20. VECTORIZATION
+-----------------
+
+Vectorization means performing operations on an entire array without
+explicitly writing a Python loop.
+
+Example:
+
+arr = np.array([1, 2, 3, 4])
+
+arr * 2
+
+This performs multiplication on all elements efficiently.
+
+Vectorization is one of the main reasons NumPy is faster than using
+normal Python loops for numerical operations.
+
+
+21. UNIVERSAL FUNCTIONS (ufuncs)
+--------------------------------
+
+Universal functions, or ufuncs, perform element-wise operations on
+NumPy arrays.
+
+Examples:
+
+np.sqrt()
+np.exp()
+np.log()
+np.sin()
+np.cos()
+np.abs()
+np.round()
+np.floor()
+np.ceil()
+
+
+Example:
+
+arr = np.array([1, 4, 9])
+
+np.sqrt(arr)
+
+Output:
+
+[1. 2. 3.]
+
+
+22. AGGREGATION FUNCTIONS
+-------------------------
+
+Aggregation functions reduce multiple values into a single result.
+
+Important functions:
+
+np.sum()
+np.mean()
+np.median()
+np.min()
+np.max()
+np.std()
+np.var()
+
+
+Example:
+
+arr = np.array([10, 20, 30, 40, 50])
+
+np.sum(arr)
+
+Output:
+
+150
+
+np.mean(arr)
+
+Output:
+
+30
+
+
+23. MINIMUM AND MAXIMUM
+-----------------------
+
+np.min(arr)
+
+Returns the smallest value.
+
+np.max(arr)
+
+Returns the largest value.
+
+
+24. STANDARD DEVIATION
+----------------------
+
+Standard deviation measures how spread out values are from the mean.
+
+np.std(arr)
+
+
+25. VARIANCE
+------------
+
+Variance measures the average squared deviation from the mean.
+
+np.var(arr)
+
+
+26. AXIS
+--------
+
+Axis determines the direction along which an operation is performed.
+
+For a 2-D array:
+
+axis=0
+-> operation is performed down the rows
+-> result is calculated column-wise
+
+axis=1
+-> operation is performed across the columns
+-> result is calculated row-wise
+
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+np.sum(arr, axis=0)
+
+Output:
+
+[5 7 9]
+
+np.sum(arr, axis=1)
+
+Output:
+
+[6 15]
+
+
+27. RESHAPING ARRAYS
+--------------------
+
+Reshaping changes the structure of an array without changing its
+data.
+
+Example:
+
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+new_arr = arr.reshape(2, 3)
+
+Output:
+
+[[1 2 3]
+ [4 5 6]]
+
+
+Important:
+
+The total number of elements must remain the same.
+
+6 elements can become:
+
+(2, 3)
+(3, 2)
+(1, 6)
+(6, 1)
+
+But cannot become:
+
+(4, 2)
+
+
+28. FLATTEN
+-----------
+
+flatten() converts a multidimensional array into a one-dimensional
+array.
+
+Example:
+
+arr = np.array([
+    [1, 2],
+    [3, 4]
+])
+
+arr.flatten()
+
+Output:
+
+[1 2 3 4]
+
+
+29. RAVEL
+---------
+
+ravel() also converts an array into one dimension.
+
+Example:
+
+arr.ravel()
+
+
+Difference:
+
+flatten() generally returns a copy.
+
+ravel() generally returns a view when possible.
+
+Therefore, ravel() can be more memory efficient.
+
+
+30. TRANSPOSE
+-------------
+
+Transpose changes rows into columns and columns into rows.
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+arr.T
+
+Output:
+
+[[1 4]
+ [2 5]
+ [3 6]]
+
+
+31. CONCATENATION
+-----------------
+
+Concatenation combines arrays.
+
+Example:
+
+a = np.array([1, 2])
+b = np.array([3, 4])
+
+np.concatenate((a, b))
+
+Output:
+
+[1 2 3 4]
+
+
+32. STACKING
+------------
+
+Stacking combines arrays along a new or existing axis.
+
+Important functions:
+
+np.vstack()
+np.hstack()
+np.stack()
+
+
+vstack()
+--------
+
+Vertical stacking.
+
+Example:
+
+np.vstack((a, b))
+
+
+hstack()
+--------
+
+Horizontal stacking.
+
+Example:
+
+np.hstack((a, b))
+
+
+33. SPLITTING ARRAYS
+--------------------
+
+NumPy can split an array into multiple arrays.
+
+Important functions:
+
+np.split()
+np.array_split()
+np.hsplit()
+np.vsplit()
+
+
+Example:
+
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+np.split(arr, 3)
+
+
+34. SORTING
+-----------
+
+NumPy provides sorting functionality.
+
+Example:
+
+arr = np.array([5, 2, 8, 1, 3])
+
+np.sort(arr)
+
+Output:
+
+[1 2 3 5 8]
+
+
+35. SEARCHING
+-------------
+
+np.where() can be used to find positions where a condition is true.
+
+Example:
+
+arr = np.array([10, 20, 30, 40])
+
+np.where(arr > 20)
+
+This returns the indices of elements greater than 20.
+
+
+36. CONDITIONAL OPERATIONS
+--------------------------
+
+NumPy supports Boolean conditions.
+
+Example:
+
+arr = np.array([10, 20, 30, 40])
+
+arr > 20
+
+Output:
+
+[False False True True]
+
+
+Boolean indexing can be used to filter values.
+
+arr[arr > 20]
+
+Output:
+
+[30 40]
+
+
+37. BROADCASTING
+----------------
+
+Broadcasting is a NumPy mechanism that allows operations between
+arrays of different shapes when their shapes are compatible.
+
+Example:
+
+arr = np.array([1, 2, 3])
+
+arr + 10
+
+Output:
+
+[11 12 13]
+
+The scalar 10 is effectively applied to every element.
+
+
+Broadcasting Rules:
+
+Two dimensions are compatible when:
+
+1. They are equal, or
+2. One of them is 1.
+
+Dimensions are compared from right to left.
+
+
+38. COPYING ARRAYS
+------------------
+
+Assignment:
+
+b = a
+
+does not create an independent copy. Both variables can refer to the
+same underlying array.
+
+copy():
+
+b = a.copy()
+
+creates an independent copy.
+
+
+39. VIEW VS COPY
+----------------
+
+View:
+
+A view shares the same underlying data with the original array.
+
+Copy:
+
+A copy creates an independent array.
+
+This distinction is important when modifying arrays.
+
+
+40. INSERTING ELEMENTS
+----------------------
+
+np.insert() is used to insert elements into an array.
+
+Example:
+
+arr = np.array([1, 2, 4])
+
+np.insert(arr, 2, 3)
+
+Output:
+
+[1 2 3 4]
+
+
+41. APPENDING ELEMENTS
+----------------------
+
+np.append() adds elements to the end of an array.
+
+Example:
+
+arr = np.array([1, 2, 3])
+
+np.append(arr, 4)
+
+Output:
+
+[1 2 3 4]
+
+
+42. DELETING ELEMENTS
+---------------------
+
+np.delete() removes elements.
+
+Example:
+
+arr = np.array([1, 2, 3, 4])
+
+np.delete(arr, 1)
+
+Output:
+
+[1 3 4]
+
+
+43. UNIQUE VALUES
+-----------------
+
+np.unique() returns unique values.
+
+Example:
+
+arr = np.array([1, 2, 2, 3, 3, 3])
+
+np.unique(arr)
+
+Output:
+
+[1 2 3]
+
+
+44. RANDOM NUMBERS
+------------------
+
+NumPy provides the random module for generating random values.
+
+Example:
+
+np.random.rand(5)
+
+Generates random floating-point values.
+
+
+Random integers:
+
+np.random.randint(1, 10, 5)
+
+Generates random integers between 1 and 9.
+
+
+45. RANDOM SEED
+---------------
+
+A random seed makes random results reproducible.
+
+Example:
+
+np.random.seed(42)
+
+After setting the same seed, the same sequence of random values can
+be generated.
+
+
+46. LINEAR ALGEBRA
+------------------
+
+NumPy provides functions for linear algebra.
+
+Important operations include:
+
+- Matrix multiplication
+- Dot product
+- Transpose
+- Inverse
+- Determinant
+- Eigenvalues
+- Eigenvectors
+
+
+Matrix multiplication:
+
+np.matmul(A, B)
+
+or:
+
+A @ B
+
+
+Dot product:
+
+np.dot(a, b)
+
+
+47. DOT PRODUCT
+---------------
+
+The dot product combines corresponding elements and sums the results.
+
+Example:
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+np.dot(a, b)
+
+Calculation:
+
+(1×4) + (2×5) + (3×6)
+
+= 4 + 10 + 18
+
+= 32
+
+
+48. MATRIX
+----------
+
+A matrix is a rectangular arrangement of numbers organized into rows
+and columns.
+
+Example:
+
+A = np.array([
+    [1, 2],
+    [3, 4]
+])
+
+
+49. MATRIX MULTIPLICATION
+-------------------------
+
+Matrix multiplication can be performed using:
+
+A @ B
+
+or:
+
+np.matmul(A, B)
+
+
+For matrix multiplication, the number of columns in the first matrix
+must equal the number of rows in the second matrix.
+
+
+50. MISSING VALUES
+------------------
+
+NumPy represents missing numerical values using NaN
+(Not a Number).
+
+Example:
+
+arr = np.array([1, 2, np.nan, 4])
+
+np.isnan(arr)
+
+This identifies which values are NaN.
+
+
+51. INFINITY
+------------
+
+NumPy provides:
+
+np.inf
+
+to represent infinity.
+
+Example:
+
+arr = np.array([1, 2, np.inf])
+
+
+52. MEMORY EFFICIENCY
+--------------------
+
+NumPy arrays are generally more memory efficient than Python lists
+because NumPy stores data in a compact, homogeneous structure.
+
+This is particularly useful when working with large numerical
+datasets.
+
+
+53. NUMPY IN DATA SCIENCE
+-------------------------
+
+NumPy is an important foundation of the Python data science ecosystem.
+
+It is commonly used for:
+
+- Numerical calculations
+- Data preprocessing
+- Mathematical operations
+- Statistical calculations
+- Matrix operations
+- Feature manipulation
+- Random data generation
+- Machine learning calculations
+
+
+54. NUMPY IN MACHINE LEARNING
+-----------------------------
+
+NumPy is heavily used in machine learning.
+
+Examples include:
+
+- Representing datasets as arrays
+- Representing feature matrices
+- Mathematical calculations
+- Matrix multiplication
+- Distance calculations
+- Statistical calculations
+- Normalization
+- Standardization
+- Random initialization
+- Implementing algorithms
+
+
+A typical dataset can be represented as:
+
+X = np.array([
+    [10, 20],
+    [15, 25],
+    [20, 30]
+])
+
+Here:
+
+Rows -> observations/samples
+
+Columns -> features
+
+
+55. NUMPY AND PANDAS
+--------------------
+
+NumPy and Pandas are closely related.
+
+NumPy:
+
+- Mainly works with arrays
+- Focuses on numerical computation
+- Best for numerical operations
+
+Pandas:
+
+- Mainly works with Series and DataFrames
+- Designed for tabular data
+- Provides powerful data manipulation tools
+- Built on top of NumPy concepts
+
+
+56. NUMPY AND MATPLOTLIB
+------------------------
+
+NumPy is often used to generate numerical data that is then visualized
+using Matplotlib.
+
+
+57. NUMPY AND SCIKIT-LEARN
+--------------------------
+
+Scikit-learn uses NumPy arrays extensively for machine learning data
+and numerical computation.
+
+
+58. ADVANTAGES OF NUMPY
+----------------------
+
+1. Fast numerical computation
+
+NumPy operations are generally much faster than equivalent operations
+using Python loops and lists.
+
+2. Memory efficient
+
+NumPy arrays generally use less memory than Python lists for numerical
+data.
+
+3. Multidimensional arrays
+
+NumPy supports 1-D, 2-D, 3-D, and higher-dimensional arrays.
+
+4. Vectorization
+
+Operations can be performed on entire arrays without explicit loops.
+
+5. Broadcasting
+
+Arrays with compatible shapes can be used together efficiently.
+
+6. Mathematical functions
+
+NumPy provides many mathematical, statistical, and numerical
+functions.
+
+7. Linear algebra
+
+NumPy provides support for matrices, dot products, matrix
+multiplication, and other linear algebra operations.
+
+8. Random number generation
+
+NumPy provides tools for generating random numbers and distributions.
+
+9. Integration
+
+NumPy works well with Pandas, Matplotlib, SciPy, and Scikit-learn.
+
+10. Widely used
+
+NumPy is one of the fundamental libraries in Python data science.
+
+
+59. DISADVANTAGES OF NUMPY
+--------------------------
+
+1. Fixed data type
+
+NumPy arrays generally work best when elements have the same data
+type.
+
+2. Less convenient for tabular data
+
+NumPy is not as convenient as Pandas for labeled rows and columns.
+
+3. Memory limitations
+
+Very large arrays can require significant memory.
+
+4. Learning curve
+
+Concepts such as dimensions, axes, broadcasting, views, and reshaping
+can be confusing for beginners.
+
+5. Not ideal for mixed data
+
+Python lists or Pandas DataFrames are usually better when working with
+different types of data in a structured table.
+
+6. Insert/delete operations
+
+Frequent insertion or deletion can be inefficient because arrays are
+stored in contiguous memory structures.
+
+
+60. IMPORTANT NUMPY FUNCTIONS
+-----------------------------
+
+Array Creation:
+
+np.array()
+np.zeros()
+np.ones()
+np.full()
+np.arange()
+np.linspace()
+np.identity()
+
+Array Information:
+
+array.ndim
+array.shape
+array.size
+array.dtype
+array.itemsize
+
+Array Manipulation:
+
+reshape()
+flatten()
+ravel()
+transpose()
+np.concatenate()
+np.vstack()
+np.hstack()
+np.split()
+
+Mathematical:
+
+np.add()
+np.subtract()
+np.multiply()
+np.divide()
+np.power()
+np.sqrt()
+np.exp()
+np.log()
+np.abs()
+
+Statistics:
+
+np.sum()
+np.mean()
+np.median()
+np.min()
+np.max()
+np.std()
+np.var()
+
+Searching:
+
+np.where()
+np.unique()
+np.argmax()
+np.argmin()
+
+Sorting:
+
+np.sort()
+
+Random:
+
+np.random.rand()
+np.random.randint()
+np.random.randn()
+np.random.choice()
+np.random.seed()
+
+Linear Algebra:
+
+np.dot()
+np.matmul()
+np.linalg.inv()
+np.linalg.det()
+np.linalg.eig()
+
+
+61. IMPORTANT CONCEPTS TO MASTER
+--------------------------------
+
+For Data Science and Machine Learning, make sure you understand:
+
+1. NumPy arrays
+2. ndarray
+3. Dimensions
+4. ndim
+5. shape
+6. size
+7. dtype
+8. Indexing
+9. Slicing
+10. Boolean indexing
+11. Vectorization
+12. Broadcasting
+13. Reshaping
+14. Flattening
+15. Axis
+16. Aggregation
+17. Copy vs View
+18. Random numbers
+19. Matrix operations
+20. Dot product
+21. Array manipulation
+22. Statistical functions
+
+
+62. NUMPY WORKFLOW IN DATA SCIENCE
+----------------------------------
+
+A common workflow is:
+
+Raw Data
+   |
+   v
+NumPy Array
+   |
+   v
+Inspect Data
+   |
+   v
+Clean / Transform
+   |
+   v
+Perform Numerical Operations
+   |
+   v
+Prepare Features
+   |
+   v
+Machine Learning Model
+
+
+63. SIMPLE EXAMPLE
+------------------
+
+import numpy as np
+
+data = np.array([
+    [10, 20],
+    [20, 30],
+    [30, 40],
+    [40, 50]
+])
+
+print(data.shape)
+print(data.mean())
+print(data.max())
+print(data.min())
+
+normalized = (data - data.mean()) / data.std()
+
+This demonstrates how NumPy can be used for numerical preprocessing.
+
+
+64. NUMPY IN ONE SENTENCE
+-------------------------
+
+NumPy is a Python library that provides efficient multidimensional
+arrays and powerful numerical operations for scientific computing,
+Data Science, and Machine Learning.
+
+
+65. KEY IDEA TO REMEMBER
+------------------------
+
+Python List:
+
+General-purpose collection
+
+NumPy Array:
+
+High-performance numerical data structure
+
+The main strength of NumPy is:
+
+        ARRAY + VECTORIZATION + BROADCASTING
+        + MATHEMATICAL OPERATIONS
+        + EFFICIENT MEMORY USAGE
+
+
+============================================================
+                    END OF NUMPY THEORY
+============================================================
+1. INTRODUCTION TO NUMPY
+------------------------
+
+NumPy stands for Numerical Python.
+
+NumPy is a Python library used for numerical computing. It provides
+powerful data structures and mathematical functions for working with
+large amounts of numerical data.
+
+The most important data structure in NumPy is the NumPy array
+(ndarray).
+
+NumPy is widely used in:
+
+- Data Science
+- Machine Learning
+- Artificial Intelligence
+- Scientific Computing
+- Statistical Computing
+- Mathematical Operations
+- Image Processing
+- Linear Algebra
+
+NumPy forms the foundation of many Python data science libraries such
+as Pandas, SciPy, Scikit-learn, and Matplotlib.
+
+
+2. WHY NUMPY?
+-------------
+
+Python lists can store numerical data, but they are relatively slow
+for large-scale numerical operations.
+
+NumPy provides:
+
+- Faster numerical operations
+- Efficient memory usage
+- Multidimensional arrays
+- Vectorized operations
+- Broadcasting
+- Mathematical functions
+- Statistical functions
+- Linear algebra operations
+- Random number generation
+
+
+3. INSTALLING NUMPY
+-------------------
+
+Install NumPy using pip:
+
+pip install numpy
+
+If using a Jupyter Notebook:
+
+!pip install numpy
+
+
+4. IMPORTING NUMPY
+------------------
+
+The standard way to import NumPy is:
+
+import numpy as np
+
+Here:
+
+numpy -> library name
+np    -> commonly used alias for NumPy
+
+
+5. NUMPY ARRAY
+--------------
+
+A NumPy array is a data structure used to store numerical values in
+one or more dimensions.
+
+Example:
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+
+A NumPy array is also called an ndarray
+(N-dimensional array).
+
+
+6. NUMPY ARRAY VS PYTHON LIST
+-----------------------------
+
+Python List:
+
+- General-purpose data structure
+- Can contain different data types
+- Slower for numerical operations
+- Higher memory usage
+- Does not naturally support vectorized mathematical operations
+
+NumPy Array:
+
+- Designed mainly for numerical computing
+- Usually contains elements of the same data type
+- Faster numerical operations
+- More memory efficient
+- Supports vectorization
+- Supports multidimensional data
+- Provides many mathematical functions
+
+
+Example:
+
+Python list:
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+a + b
+
+Output:
+
+[1, 2, 3, 4, 5, 6]
+
+NumPy:
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+a + b
+
+Output:
+
+[5 7 9]
+
+
+7. FEATURES OF NUMPY
+--------------------
+
+Important features of NumPy:
+
+1. Multidimensional arrays
+2. Fast numerical computation
+3. Vectorized operations
+4. Broadcasting
+5. Memory efficiency
+6. Mathematical functions
+7. Statistical functions
+8. Linear algebra support
+9. Random number generation
+10. Array manipulation
+11. Sorting and searching
+12. Integration with other Python libraries
+
+
+8. DIMENSIONS OF NUMPY ARRAYS
+-----------------------------
+
+NumPy arrays can have different dimensions.
+
+0-D Array
+---------
+
+A scalar value is a 0-dimensional array.
+
+Example:
+
+arr = np.array(10)
+
+
+1-D Array
+---------
+
+A one-dimensional array is similar to a list.
+
+Example:
+
+arr = np.array([1, 2, 3, 4])
+
+
+2-D Array
+---------
+
+A two-dimensional array contains rows and columns.
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+
+3-D Array
+---------
+
+A three-dimensional array contains multiple 2-D arrays.
+
+Example:
+
+arr = np.array([
+    [
+        [1, 2],
+        [3, 4]
+    ],
+    [
+        [5, 6],
+        [7, 8]
+    ]
+])
+
+
+N-D Array
+---------
+
+NumPy can create arrays with more than three dimensions.
+
+The number of dimensions is called the array's ndim.
+
+
+9. IMPORTANT ARRAY ATTRIBUTES
+-----------------------------
+
+NumPy arrays have several important attributes.
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+
+ndim
+----
+
+Returns the number of dimensions.
+
+arr.ndim
+
+Output:
+
+2
+
+
+shape
+-----
+
+Returns the size of each dimension.
+
+arr.shape
+
+Output:
+
+(2, 3)
+
+This means:
+
+2 rows
+3 columns
+
+
+size
+----
+
+Returns the total number of elements.
+
+arr.size
+
+Output:
+
+6
+
+
+dtype
+-----
+
+Returns the data type of the elements.
+
+arr.dtype
+
+
+itemsize
+--------
+
+Returns the number of bytes used by each element.
+
+arr.itemsize
+
+
+10. CREATING NUMPY ARRAYS
+-------------------------
+
+Using np.array()
+----------------
+
+arr = np.array([1, 2, 3, 4])
+
+
+Using zeros()
+-------------
+
+Creates an array filled with zeros.
+
+np.zeros(5)
+
+Output:
+
+[0. 0. 0. 0. 0.]
+
+
+Using ones()
+------------
+
+Creates an array filled with ones.
+
+np.ones(5)
+
+Output:
+
+[1. 1. 1. 1. 1.]
+
+
+Using full()
+------------
+
+Creates an array filled with a specified value.
+
+np.full(5, 10)
+
+Output:
+
+[10 10 10 10 10]
+
+
+Using arange()
+--------------
+
+Creates values within a specified range.
+
+np.arange(1, 10)
+
+Output:
+
+[1 2 3 4 5 6 7 8 9]
+
+
+Using arange() with step:
+
+np.arange(1, 10, 2)
+
+Output:
+
+[1 3 5 7 9]
+
+
+Using linspace()
+----------------
+
+Creates evenly spaced numbers between two values.
+
+np.linspace(0, 10, 5)
+
+Output:
+
+[0.  2.5 5.  7.5 10.]
+
+
+Using identity()
+----------------
+
+Creates an identity matrix.
+
+np.identity(3)
+
+Output:
+
+[[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+
+
+11. DATA TYPES IN NUMPY
+-----------------------
+
+NumPy supports different numerical data types.
+
+Common data types:
+
+int8
+int16
+int32
+int64
+
+uint8
+uint16
+uint32
+uint64
+
+float16
+float32
+float64
+
+complex64
+complex128
+
+bool
+str
+object
+
+
+Example:
+
+arr = np.array([1, 2, 3], dtype=np.float64)
+
+
+12. TYPE CONVERSION
+-------------------
+
+The astype() method can be used to convert the data type.
+
+Example:
+
+arr = np.array([1, 2, 3])
+
+new_arr = arr.astype(float)
+
+
+13. INDEXING
+------------
+
+Indexing means accessing individual elements from an array.
+
+NumPy uses zero-based indexing.
+
+Example:
+
+arr = np.array([10, 20, 30, 40, 50])
+
+arr[0]
+
+Output:
+
+10
+
+arr[2]
+
+Output:
+
+30
+
+
+14. NEGATIVE INDEXING
+---------------------
+
+Negative indexing starts from the end.
+
+arr[-1]
+
+Returns the last element.
+
+arr[-2]
+
+Returns the second-last element.
+
+
+15. 2-D ARRAY INDEXING
+----------------------
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+arr[0, 1]
+
+Output:
+
+2
+
+Here:
+
+0 -> row index
+1 -> column index
+
+
+16. SLICING
+-----------
+
+Slicing is used to extract a portion of an array.
+
+Syntax:
+
+array[start:stop:step]
+
+
+Example:
+
+arr = np.array([10, 20, 30, 40, 50])
+
+arr[1:4]
+
+Output:
+
+[20 30 40]
+
+
+Example:
+
+arr[::2]
+
+Output:
+
+[10 30 50]
+
+
+17. 2-D ARRAY SLICING
+---------------------
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+
+arr[0:2, 1:3]
+
+This selects:
+
+Rows 0 to 1
+Columns 1 to 2
+
+
+18. ARRAY OPERATIONS
+--------------------
+
+NumPy supports element-wise arithmetic operations.
+
+Example:
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+
+Addition:
+
+a + b
+
+Output:
+
+[5 7 9]
+
+
+Subtraction:
+
+a - b
+
+Output:
+
+[-3 -3 -3]
+
+
+Multiplication:
+
+a * b
+
+Output:
+
+[4 10 18]
+
+
+Division:
+
+a / b
+
+
+Power:
+
+a ** 2
+
+
+19. SCALAR OPERATIONS
+---------------------
+
+A scalar operation applies a value to every element.
+
+Example:
+
+arr = np.array([1, 2, 3, 4])
+
+arr + 10
+
+Output:
+
+[11 12 13 14]
+
+arr * 2
+
+Output:
+
+[2 4 6 8]
+
+
+20. VECTORIZATION
+-----------------
+
+Vectorization means performing operations on an entire array without
+explicitly writing a Python loop.
+
+Example:
+
+arr = np.array([1, 2, 3, 4])
+
+arr * 2
+
+This performs multiplication on all elements efficiently.
+
+Vectorization is one of the main reasons NumPy is faster than using
+normal Python loops for numerical operations.
+
+
+21. UNIVERSAL FUNCTIONS (ufuncs)
+--------------------------------
+
+Universal functions, or ufuncs, perform element-wise operations on
+NumPy arrays.
+
+Examples:
+
+np.sqrt()
+np.exp()
+np.log()
+np.sin()
+np.cos()
+np.abs()
+np.round()
+np.floor()
+np.ceil()
+
+
+Example:
+
+arr = np.array([1, 4, 9])
+
+np.sqrt(arr)
+
+Output:
+
+[1. 2. 3.]
+
+
+22. AGGREGATION FUNCTIONS
+-------------------------
+
+Aggregation functions reduce multiple values into a single result.
+
+Important functions:
+
+np.sum()
+np.mean()
+np.median()
+np.min()
+np.max()
+np.std()
+np.var()
+
+
+Example:
+
+arr = np.array([10, 20, 30, 40, 50])
+
+np.sum(arr)
+
+Output:
+
+150
+
+np.mean(arr)
+
+Output:
+
+30
+
+
+23. MINIMUM AND MAXIMUM
+-----------------------
+
+np.min(arr)
+
+Returns the smallest value.
+
+np.max(arr)
+
+Returns the largest value.
+
+
+24. STANDARD DEVIATION
+----------------------
+
+Standard deviation measures how spread out values are from the mean.
+
+np.std(arr)
+
+
+25. VARIANCE
+------------
+
+Variance measures the average squared deviation from the mean.
+
+np.var(arr)
+
+
+26. AXIS
+--------
+
+Axis determines the direction along which an operation is performed.
+
+For a 2-D array:
+
+axis=0
+-> operation is performed down the rows
+-> result is calculated column-wise
+
+axis=1
+-> operation is performed across the columns
+-> result is calculated row-wise
+
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+np.sum(arr, axis=0)
+
+Output:
+
+[5 7 9]
+
+np.sum(arr, axis=1)
+
+Output:
+
+[6 15]
+
+
+27. RESHAPING ARRAYS
+--------------------
+
+Reshaping changes the structure of an array without changing its
+data.
+
+Example:
+
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+new_arr = arr.reshape(2, 3)
+
+Output:
+
+[[1 2 3]
+ [4 5 6]]
+
+
+Important:
+
+The total number of elements must remain the same.
+
+6 elements can become:
+
+(2, 3)
+(3, 2)
+(1, 6)
+(6, 1)
+
+But cannot become:
+
+(4, 2)
+
+
+28. FLATTEN
+-----------
+
+flatten() converts a multidimensional array into a one-dimensional
+array.
+
+Example:
+
+arr = np.array([
+    [1, 2],
+    [3, 4]
+])
+
+arr.flatten()
+
+Output:
+
+[1 2 3 4]
+
+
+29. RAVEL
+---------
+
+ravel() also converts an array into one dimension.
+
+Example:
+
+arr.ravel()
+
+
+Difference:
+
+flatten() generally returns a copy.
+
+ravel() generally returns a view when possible.
+
+Therefore, ravel() can be more memory efficient.
+
+
+30. TRANSPOSE
+-------------
+
+Transpose changes rows into columns and columns into rows.
+
+Example:
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+arr.T
+
+Output:
+
+[[1 4]
+ [2 5]
+ [3 6]]
+
+
+31. CONCATENATION
+-----------------
+
+Concatenation combines arrays.
+
+Example:
+
+a = np.array([1, 2])
+b = np.array([3, 4])
+
+np.concatenate((a, b))
+
+Output:
+
+[1 2 3 4]
+
+
+32. STACKING
+------------
+
+Stacking combines arrays along a new or existing axis.
+
+Important functions:
+
+np.vstack()
+np.hstack()
+np.stack()
+
+
+vstack()
+--------
+
+Vertical stacking.
+
+Example:
+
+np.vstack((a, b))
+
+
+hstack()
+--------
+
+Horizontal stacking.
+
+Example:
+
+np.hstack((a, b))
+
+
+33. SPLITTING ARRAYS
+--------------------
+
+NumPy can split an array into multiple arrays.
+
+Important functions:
+
+np.split()
+np.array_split()
+np.hsplit()
+np.vsplit()
+
+
+Example:
+
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+np.split(arr, 3)
+
+
+34. SORTING
+-----------
+
+NumPy provides sorting functionality.
+
+Example:
+
+arr = np.array([5, 2, 8, 1, 3])
+
+np.sort(arr)
+
+Output:
+
+[1 2 3 5 8]
+
+
+35. SEARCHING
+-------------
+
+np.where() can be used to find positions where a condition is true.
+
+Example:
+
+arr = np.array([10, 20, 30, 40])
+
+np.where(arr > 20)
+
+This returns the indices of elements greater than 20.
+
+
+36. CONDITIONAL OPERATIONS
+--------------------------
+
+NumPy supports Boolean conditions.
+
+Example:
+
+arr = np.array([10, 20, 30, 40])
+
+arr > 20
+
+Output:
+
+[False False True True]
+
+
+Boolean indexing can be used to filter values.
+
+arr[arr > 20]
+
+Output:
+
+[30 40]
+
+
+37. BROADCASTING
+----------------
+
+Broadcasting is a NumPy mechanism that allows operations between
+arrays of different shapes when their shapes are compatible.
+
+Example:
+
+arr = np.array([1, 2, 3])
+
+arr + 10
+
+Output:
+
+[11 12 13]
+
+The scalar 10 is effectively applied to every element.
+
+
+Broadcasting Rules:
+
+Two dimensions are compatible when:
+
+1. They are equal, or
+2. One of them is 1.
+
+Dimensions are compared from right to left.
+
+
+38. COPYING ARRAYS
+------------------
+
+Assignment:
+
+b = a
+
+does not create an independent copy. Both variables can refer to the
+same underlying array.
+
+copy():
+
+b = a.copy()
+
+creates an independent copy.
+
+
+39. VIEW VS COPY
+----------------
+
+View:
+
+A view shares the same underlying data with the original array.
+
+Copy:
+
+A copy creates an independent array.
+
+This distinction is important when modifying arrays.
+
+
+40. INSERTING ELEMENTS
+----------------------
+
+np.insert() is used to insert elements into an array.
+
+Example:
+
+arr = np.array([1, 2, 4])
+
+np.insert(arr, 2, 3)
+
+Output:
+
+[1 2 3 4]
+
+
+41. APPENDING ELEMENTS
+----------------------
+
+np.append() adds elements to the end of an array.
+
+Example:
+
+arr = np.array([1, 2, 3])
+
+np.append(arr, 4)
+
+Output:
+
+[1 2 3 4]
+
+
+42. DELETING ELEMENTS
+---------------------
+
+np.delete() removes elements.
+
+Example:
+
+arr = np.array([1, 2, 3, 4])
+
+np.delete(arr, 1)
+
+Output:
+
+[1 3 4]
+
+
+43. UNIQUE VALUES
+-----------------
+
+np.unique() returns unique values.
+
+Example:
+
+arr = np.array([1, 2, 2, 3, 3, 3])
+
+np.unique(arr)
+
+Output:
+
+[1 2 3]
+
+
+44. RANDOM NUMBERS
+------------------
+
+NumPy provides the random module for generating random values.
+
+Example:
+
+np.random.rand(5)
+
+Generates random floating-point values.
+
+
+Random integers:
+
+np.random.randint(1, 10, 5)
+
+Generates random integers between 1 and 9.
+
+
+45. RANDOM SEED
+---------------
+
+A random seed makes random results reproducible.
+
+Example:
+
+np.random.seed(42)
+
+After setting the same seed, the same sequence of random values can
+be generated.
+
+
+46. LINEAR ALGEBRA
+------------------
+
+NumPy provides functions for linear algebra.
+
+Important operations include:
+
+- Matrix multiplication
+- Dot product
+- Transpose
+- Inverse
+- Determinant
+- Eigenvalues
+- Eigenvectors
+
+
+Matrix multiplication:
+
+np.matmul(A, B)
+
+or:
+
+A @ B
+
+
+Dot product:
+
+np.dot(a, b)
+
+
+47. DOT PRODUCT
+---------------
+
+The dot product combines corresponding elements and sums the results.
+
+Example:
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+np.dot(a, b)
+
+Calculation:
+
+(1×4) + (2×5) + (3×6)
+
+= 4 + 10 + 18
+
+= 32
+
+
+48. MATRIX
+----------
+
+A matrix is a rectangular arrangement of numbers organized into rows
+and columns.
+
+Example:
+
+A = np.array([
+    [1, 2],
+    [3, 4]
+])
+
+
+49. MATRIX MULTIPLICATION
+-------------------------
+
+Matrix multiplication can be performed using:
+
+A @ B
+
+or:
+
+np.matmul(A, B)
+
+
+For matrix multiplication, the number of columns in the first matrix
+must equal the number of rows in the second matrix.
+
+
+50. MISSING VALUES
+------------------
+
+NumPy represents missing numerical values using NaN
+(Not a Number).
+
+Example:
+
+arr = np.array([1, 2, np.nan, 4])
+
+np.isnan(arr)
+
+This identifies which values are NaN.
+
+
+51. INFINITY
+------------
+
+NumPy provides:
+
+np.inf
+
+to represent infinity.
+
+Example:
+
+arr = np.array([1, 2, np.inf])
+
+
+52. MEMORY EFFICIENCY
+--------------------
+
+NumPy arrays are generally more memory efficient than Python lists
+because NumPy stores data in a compact, homogeneous structure.
+
+This is particularly useful when working with large numerical
+datasets.
+
+
+53. NUMPY IN DATA SCIENCE
+-------------------------
+
+NumPy is an important foundation of the Python data science ecosystem.
+
+It is commonly used for:
+
+- Numerical calculations
+- Data preprocessing
+- Mathematical operations
+- Statistical calculations
+- Matrix operations
+- Feature manipulation
+- Random data generation
+- Machine learning calculations
+
+
+54. NUMPY IN MACHINE LEARNING
+-----------------------------
+
+NumPy is heavily used in machine learning.
+
+Examples include:
+
+- Representing datasets as arrays
+- Representing feature matrices
+- Mathematical calculations
+- Matrix multiplication
+- Distance calculations
+- Statistical calculations
+- Normalization
+- Standardization
+- Random initialization
+- Implementing algorithms
+
+
+A typical dataset can be represented as:
+
+X = np.array([
+    [10, 20],
+    [15, 25],
+    [20, 30]
+])
+
+Here:
+
+Rows -> observations/samples
+
+Columns -> features
+
+
+55. NUMPY AND PANDAS
+--------------------
+
+NumPy and Pandas are closely related.
+
+NumPy:
+
+- Mainly works with arrays
+- Focuses on numerical computation
+- Best for numerical operations
+
+Pandas:
+
+- Mainly works with Series and DataFrames
+- Designed for tabular data
+- Provides powerful data manipulation tools
+- Built on top of NumPy concepts
+
+
+56. NUMPY AND MATPLOTLIB
+------------------------
+
+NumPy is often used to generate numerical data that is then visualized
+using Matplotlib.
+
+
+57. NUMPY AND SCIKIT-LEARN
+--------------------------
+
+Scikit-learn uses NumPy arrays extensively for machine learning data
+and numerical computation.
+
+
+58. ADVANTAGES OF NUMPY
+----------------------
+
+1. Fast numerical computation
+
+NumPy operations are generally much faster than equivalent operations
+using Python loops and lists.
+
+2. Memory efficient
+
+NumPy arrays generally use less memory than Python lists for numerical
+data.
+
+3. Multidimensional arrays
+
+NumPy supports 1-D, 2-D, 3-D, and higher-dimensional arrays.
+
+4. Vectorization
+
+Operations can be performed on entire arrays without explicit loops.
+
+5. Broadcasting
+
+Arrays with compatible shapes can be used together efficiently.
+
+6. Mathematical functions
+
+NumPy provides many mathematical, statistical, and numerical
+functions.
+
+7. Linear algebra
+
+NumPy provides support for matrices, dot products, matrix
+multiplication, and other linear algebra operations.
+
+8. Random number generation
+
+NumPy provides tools for generating random numbers and distributions.
+
+9. Integration
+
+NumPy works well with Pandas, Matplotlib, SciPy, and Scikit-learn.
+
+10. Widely used
+
+NumPy is one of the fundamental libraries in Python data science.
+
+
+59. DISADVANTAGES OF NUMPY
+--------------------------
+
+1. Fixed data type
+
+NumPy arrays generally work best when elements have the same data
+type.
+
+2. Less convenient for tabular data
+
+NumPy is not as convenient as Pandas for labeled rows and columns.
+
+3. Memory limitations
+
+Very large arrays can require significant memory.
+
+4. Learning curve
+
+Concepts such as dimensions, axes, broadcasting, views, and reshaping
+can be confusing for beginners.
+
+5. Not ideal for mixed data
+
+Python lists or Pandas DataFrames are usually better when working with
+different types of data in a structured table.
+
+6. Insert/delete operations
+
+Frequent insertion or deletion can be inefficient because arrays are
+stored in contiguous memory structures.
+
+
+60. IMPORTANT NUMPY FUNCTIONS
+-----------------------------
+
+Array Creation:
+
+np.array()
+np.zeros()
+np.ones()
+np.full()
+np.arange()
+np.linspace()
+np.identity()
+
+Array Information:
+
+array.ndim
+array.shape
+array.size
+array.dtype
+array.itemsize
+
+Array Manipulation:
+
+reshape()
+flatten()
+ravel()
+transpose()
+np.concatenate()
+np.vstack()
+np.hstack()
+np.split()
+
+Mathematical:
+
+np.add()
+np.subtract()
+np.multiply()
+np.divide()
+np.power()
+np.sqrt()
+np.exp()
+np.log()
+np.abs()
+
+Statistics:
+
+np.sum()
+np.mean()
+np.median()
+np.min()
+np.max()
+np.std()
+np.var()
+
+Searching:
+
+np.where()
+np.unique()
+np.argmax()
+np.argmin()
+
+Sorting:
+
+np.sort()
+
+Random:
+
+np.random.rand()
+np.random.randint()
+np.random.randn()
+np.random.choice()
+np.random.seed()
+
+Linear Algebra:
+
+np.dot()
+np.matmul()
+np.linalg.inv()
+np.linalg.det()
+np.linalg.eig()
+
+
+61. IMPORTANT CONCEPTS TO MASTER
+--------------------------------
+
+For Data Science and Machine Learning, make sure you understand:
+
+1. NumPy arrays
+2. ndarray
+3. Dimensions
+4. ndim
+5. shape
+6. size
+7. dtype
+8. Indexing
+9. Slicing
+10. Boolean indexing
+11. Vectorization
+12. Broadcasting
+13. Reshaping
+14. Flattening
+15. Axis
+16. Aggregation
+17. Copy vs View
+18. Random numbers
+19. Matrix operations
+20. Dot product
+21. Array manipulation
+22. Statistical functions
+
+
+62. NUMPY WORKFLOW IN DATA SCIENCE
+----------------------------------
+
+A common workflow is:
+
+Raw Data
+   |
+   v
+NumPy Array
+   |
+   v
+Inspect Data
+   |
+   v
+Clean / Transform
+   |
+   v
+Perform Numerical Operations
+   |
+   v
+Prepare Features
+   |
+   v
+Machine Learning Model
+
+
+63. SIMPLE EXAMPLE
+------------------
+
+import numpy as np
+
+data = np.array([
+    [10, 20],
+    [20, 30],
+    [30, 40],
+    [40, 50]
+])
+
+print(data.shape)
+print(data.mean())
+print(data.max())
+print(data.min())
+
+normalized = (data - data.mean()) / data.std()
+
+This demonstrates how NumPy can be used for numerical preprocessing.
+
+
+64. NUMPY IN ONE SENTENCE
+-------------------------
+
+NumPy is a Python library that provides efficient multidimensional
+arrays and powerful numerical operations for scientific computing,
+Data Science, and Machine Learning.
+
+
+65. KEY IDEA TO REMEMBER
+------------------------
+
+Python List:
+
+General-purpose collection
+
+NumPy Array:
+
+High-performance numerical data structure
+
+The main strength of NumPy is:
+
+        ARRAY + VECTORIZATION + BROADCASTING
+        + MATHEMATICAL OPERATIONS
+        + EFFICIENT MEMORY USAGE
+
+
+============================================================
+                    END OF NUMPY THEORY
+============================================================
