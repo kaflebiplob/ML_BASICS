@@ -1,53 +1,1210 @@
-Pandas
-======
+# PANDAS
 
-Definition
-----------
+1. Definition
 
-Pandas is an open-source Python library used for data manipulation, data analysis, and data cleaning.
+---
 
-It provides easy-to-use data structures and functions for working with structured data such as tables, CSV files, Excel files, SQL data, and JSON data.
+Pandas is an open-source Python library used for data manipulation, data cleaning, data analysis, and data preprocessing.
 
-Pandas is widely used in Data Science and Machine Learning for preparing and analyzing datasets before building machine learning models.
+It provides powerful data structures and functions for working with structured and tabular data.
 
+Pandas is widely used in:
 
-Why Use Pandas?
----------------
+* Data Science
+* Machine Learning
+* Data Analysis
+* Data Cleaning
+* Exploratory Data Analysis (EDA)
+* Data Preprocessing
 
-- To load datasets from different sources.
-- To clean and preprocess data.
-- To handle missing values.
-- To analyze and explore datasets.
-- To filter and select data.
-- To sort and organize data.
-- To group and aggregate data.
-- To merge and join multiple datasets.
-- To remove duplicate data.
-- To perform statistical analysis.
-- To prepare data for Machine Learning.
+Pandas is built on top of NumPy and works well with other Python libraries such as Matplotlib, Seaborn, and Scikit-learn.
 
+2. Why Pandas is Used
 
-Main Data Structures
---------------------
+---
+
+Real-world datasets are usually not clean and ready to use.
+
+They may contain:
+
+* Missing values
+* Duplicate records
+* Incorrect data types
+* Unnecessary columns
+* Incorrect or inconsistent values
+* Outliers
+* Different data formats
+
+Pandas provides tools to load, inspect, clean, transform, analyze, and prepare this data.
+
+A common Machine Learning workflow is:
+
+Raw Data
+↓
+Load Data
+↓
+Explore Data
+↓
+Clean Data
+↓
+Transform Data
+↓
+Feature Selection
+↓
+Prepare Data
+↓
+Machine Learning Model
+
+3. Installing Pandas
+
+---
+
+Pandas can be installed using pip:
+
+pip install pandas
+
+To check the installed version:
+
+import pandas as pd
+
+print(pd.**version**)
+
+4. Importing Pandas
+
+---
+
+The standard way to import Pandas is:
+
+import pandas as pd
+
+"pd" is the commonly used alias for Pandas.
+
+After importing it, Pandas functions can be accessed using:
+
+pd.function_name()
+
+5. Pandas Data Structures
+
+---
 
 Pandas mainly provides two important data structures:
 
 1. Series
+
 2. DataFrame
 
+3. Series
 
-1. Series
----------
+---
 
 A Series is a one-dimensional labeled data structure.
 
-It can be thought of as a single column of data with an index.
+It can contain:
+
+* Numbers
+* Strings
+* Boolean values
+* Dates
+* Other Python objects
+
+A Series has:
+
+* Data
+* Index
 
 Example:
 
-```python
-import pandas as pd
+s = pd.Series([10, 20, 30, 40])
 
-data = pd.Series([10, 20, 30, 40])
+A Series can be thought of as a single column of data.
 
-print(data)
+7. DataFrame
+
+---
+
+A DataFrame is a two-dimensional labeled data structure consisting of rows and columns.
+
+It is similar to:
+
+* A spreadsheet
+* A database table
+* An SQL table
+
+Example:
+
+data = {
+"Name": ["Ram", "Sita", "Hari"],
+"Age": [20, 22, 21],
+"Score": [80, 90, 85]
+}
+
+df = pd.DataFrame(data)
+
+A DataFrame contains:
+
+* Rows
+* Columns
+* Index
+* Values
+* Column names
+
+8. Index
+
+---
+
+An index identifies the rows of a Series or DataFrame.
+
+By default, Pandas creates a numerical index:
+
+0
+1
+2
+3
+...
+
+Example:
+
+df.index
+
+Pandas also allows us to use custom indexes.
+
+9. Columns
+
+---
+
+Columns represent individual variables or features in a DataFrame.
+
+Example:
+
+Name
+Age
+Score
+
+Column names can be accessed using:
+
+df.columns
+
+A single column can be selected using:
+
+df["Age"]
+
+10. Rows
+
+---
+
+Rows represent individual observations or records.
+
+For example, in a student dataset:
+
+Name    Age    Score
+Ram     20     80
+Sita    22     90
+
+Each row represents one student.
+
+11. Creating a DataFrame
+
+---
+
+A DataFrame can be created from:
+
+* Dictionary
+* List
+* List of dictionaries
+* NumPy array
+* Existing DataFrame
+* Series
+
+Example:
+
+data = {
+"Name": ["Ram", "Sita"],
+"Age": [20, 22]
+}
+
+df = pd.DataFrame(data)
+
+12. Reading Data
+
+---
+
+Pandas can read data from many sources.
+
+Common functions include:
+
+pd.read_csv()
+pd.read_excel()
+pd.read_json()
+pd.read_sql()
+
+CSV is one of the most common formats used in Data Science.
+
+Example:
+
+df = pd.read_csv("data.csv")
+
+13. Writing or Exporting Data
+
+---
+
+Pandas can save DataFrames to different formats.
+
+Common functions:
+
+df.to_csv()
+df.to_excel()
+df.to_json()
+
+Example:
+
+df.to_csv("output.csv", index=False)
+
+index=False prevents Pandas from saving the DataFrame index as an additional column.
+
+14. Inspecting a Dataset
+
+---
+
+Before working with a dataset, we should understand its structure.
+
+Important attributes and functions include:
+
+df.head()
+df.tail()
+df.shape
+df.columns
+df.index
+df.dtypes
+df.info()
+df.describe()
+
+15. head()
+
+---
+
+head() displays the first few rows of a DataFrame.
+
+Example:
+
+df.head()
+
+By default, it displays the first 5 rows.
+
+We can specify the number of rows:
+
+df.head(10)
+
+16. tail()
+
+---
+
+tail() displays the last few rows.
+
+Example:
+
+df.tail()
+
+We can also specify the number of rows:
+
+df.tail(10)
+
+17. shape
+
+---
+
+shape returns the number of rows and columns.
+
+Example:
+
+df.shape
+
+If the result is:
+
+(1000, 5)
+
+It means:
+
+1000 rows
+5 columns
+
+18. columns
+
+---
+
+columns returns the names of the columns.
+
+Example:
+
+df.columns
+
+19. dtypes
+
+---
+
+dtypes shows the data type of each column.
+
+Example:
+
+df.dtypes
+
+Common data types include:
+
+* int64
+* float64
+* object
+* string
+* bool
+* datetime64
+
+20. info()
+
+---
+
+info() provides important information about the DataFrame.
+
+It generally shows:
+
+* Number of rows
+* Column names
+* Number of non-null values
+* Data types
+* Memory usage
+
+Example:
+
+df.info()
+
+21. describe()
+
+---
+
+describe() provides statistical information about numerical columns.
+
+It commonly returns:
+
+* count
+* mean
+* standard deviation
+* minimum
+* 25th percentile
+* median
+* 75th percentile
+* maximum
+
+Example:
+
+df.describe()
+
+22. Selecting Columns
+
+---
+
+A single column can be selected using:
+
+df["Age"]
+
+Multiple columns:
+
+df[["Name", "Age"]]
+
+23. Selecting Rows
+
+---
+
+Rows can be selected using:
+
+* loc
+* iloc
+
+24. loc
+
+---
+
+loc is label-based indexing.
+
+It selects rows and columns using their labels.
+
+Example:
+
+df.loc[0]
+
+Select a particular column:
+
+df.loc[:, "Age"]
+
+Select multiple columns:
+
+df.loc[:, ["Name", "Age"]]
+
+25. iloc
+
+---
+
+iloc is integer-position-based indexing.
+
+It selects rows and columns using their numerical positions.
+
+Example:
+
+df.iloc[0]
+
+Select the first row.
+
+Example:
+
+df.iloc[0:5]
+
+Select the first five rows.
+
+Difference:
+
+loc  -> Uses labels
+iloc -> Uses integer positions
+
+26. Filtering Data
+
+---
+
+Filtering means selecting rows that satisfy a condition.
+
+Example:
+
+df[df["Age"] > 20]
+
+This selects rows where Age is greater than 20.
+
+Multiple conditions can also be used.
+
+Example:
+
+df[(df["Age"] > 20) & (df["Score"] > 80)]
+
+Common operators:
+
+> Greater than
+> <    Less than
+> =   Greater than or equal to
+> <=   Less than or equal to
+> ==   Equal to
+> !=   Not equal to
+
+27. Adding a Column
+
+---
+
+A new column can be created by assigning values.
+
+Example:
+
+df["Salary"] = [30000, 40000, 35000]
+
+A calculated column can also be created:
+
+df["Total"] = df["Price"] * df["Quantity"]
+
+28. Updating a Column
+
+---
+
+Existing column values can be modified.
+
+Example:
+
+df["Age"] = df["Age"] + 1
+
+29. Removing Columns
+
+---
+
+The drop() function can remove columns.
+
+Example:
+
+df.drop("Age", axis=1)
+
+Multiple columns:
+
+df.drop(["Age", "Score"], axis=1)
+
+30. Removing Rows
+
+---
+
+Rows can also be removed.
+
+Example:
+
+df.drop(0)
+
+This removes the row with index 0.
+
+31. Missing Values
+
+---
+
+Missing values are values that are not available in a dataset.
+
+Pandas commonly represents missing values using:
+
+NaN
+
+Missing data can occur because:
+
+* Data was not collected
+* Data was entered incorrectly
+* Information was unavailable
+* Data was lost
+* Different datasets were combined
+
+32. Detecting Missing Values
+
+---
+
+isnull() can be used to detect missing values.
+
+Example:
+
+df.isnull()
+
+To count missing values in each column:
+
+df.isnull().sum()
+
+33. notnull()
+
+---
+
+notnull() identifies values that are not missing.
+
+Example:
+
+df.notnull()
+
+34. Removing Missing Values
+
+---
+
+dropna() removes rows or columns containing missing values.
+
+Example:
+
+df.dropna()
+
+35. Filling Missing Values
+
+---
+
+fillna() replaces missing values.
+
+Example:
+
+df["Age"].fillna(df["Age"].mean())
+
+Another example:
+
+df.fillna(0)
+
+36. Duplicate Data
+
+---
+
+Duplicate records are repeated rows in a dataset.
+
+Duplicates can negatively affect analysis and Machine Learning models.
+
+To detect duplicates:
+
+df.duplicated()
+
+To remove duplicates:
+
+df.drop_duplicates()
+
+37. Sorting Data
+
+---
+
+sort_values() is used to sort data.
+
+Example:
+
+df.sort_values("Age")
+
+Descending order:
+
+df.sort_values("Age", ascending=False)
+
+38. Renaming Columns
+
+---
+
+rename() can be used to change column names.
+
+Example:
+
+df.rename(columns={"Age": "Student_Age"})
+
+39. Changing Data Types
+
+---
+
+astype() can be used to change the data type of a column.
+
+Example:
+
+df["Age"] = df["Age"].astype(float)
+
+40. Handling Dates
+
+---
+
+Pandas provides support for date and time data.
+
+Example:
+
+df["Date"] = pd.to_datetime(df["Date"])
+
+After converting a column to datetime, we can extract:
+
+* Year
+* Month
+* Day
+* Day of week
+
+41. String Operations
+
+---
+
+Pandas provides string functions for working with text data.
+
+Examples:
+
+.str.lower()
+.str.upper()
+.str.strip()
+.str.contains()
+.str.replace()
+
+Example:
+
+df["Name"] = df["Name"].str.upper()
+
+42. GroupBy
+
+---
+
+groupby() is used to divide data into groups and perform calculations on each group.
+
+This is useful for analyzing data by categories.
+
+Example:
+
+df.groupby("Department")["Salary"].mean()
+
+Common aggregation functions:
+
+* mean()
+* sum()
+* count()
+* min()
+* max()
+* median()
+
+43. Aggregation
+
+---
+
+Aggregation means calculating summary values from data.
+
+Common aggregation operations:
+
+mean
+sum
+count
+min
+max
+median
+std
+var
+
+Example:
+
+df["Salary"].mean()
+
+44. apply()
+
+---
+
+apply() is used to apply a function to values in a Series or DataFrame.
+
+Example:
+
+df["Age"].apply(lambda x: x + 1)
+
+It is useful for custom transformations.
+
+45. Unique Values
+
+---
+
+unique() returns the unique values in a column.
+
+Example:
+
+df["Department"].unique()
+
+46. Number of Unique Values
+
+---
+
+nunique() returns the number of unique values.
+
+Example:
+
+df["Department"].nunique()
+
+47. value_counts()
+
+---
+
+value_counts() counts how frequently each unique value occurs.
+
+Example:
+
+df["Department"].value_counts()
+
+This is especially useful for categorical data.
+
+48. Combining DataFrames
+
+---
+
+Pandas provides several methods for combining datasets.
+
+Main methods:
+
+* concat()
+* merge()
+* join()
+
+49. concat()
+
+---
+
+concat() combines DataFrames along rows or columns.
+
+Example:
+
+pd.concat([df1, df2])
+
+50. merge()
+
+---
+
+merge() combines DataFrames based on common columns or keys.
+
+It is similar to SQL JOIN operations.
+
+Example:
+
+pd.merge(df1, df2, on="id")
+
+Common types of merge:
+
+* Inner join
+* Left join
+* Right join
+* Outer join
+
+51. join()
+
+---
+
+join() is used to combine DataFrames based primarily on their indexes.
+
+Example:
+
+df1.join(df2)
+
+52. Reshaping Data
+
+---
+
+Pandas provides tools to change the structure of data.
+
+Important operations include:
+
+* pivot()
+* pivot_table()
+* melt()
+* stack()
+* unstack()
+
+53. Pivot Table
+
+---
+
+A pivot table summarizes data based on one or more categories.
+
+Example:
+
+pd.pivot_table(
+df,
+values="Sales",
+index="Product",
+aggfunc="sum"
+)
+
+54. melt()
+
+---
+
+melt() converts data from a wide format to a long format.
+
+It is useful when restructuring datasets for analysis or visualization.
+
+55. Copying Data
+
+---
+
+copy() creates an independent copy of a DataFrame.
+
+Example:
+
+df2 = df.copy()
+
+This is useful when we want to modify df2 without directly modifying the original DataFrame.
+
+56. Memory and Large Datasets
+
+---
+
+Pandas generally works with data in memory.
+
+This means that very large datasets may require significant RAM.
+
+For extremely large datasets, alternatives or complementary tools may be considered, such as:
+
+* Dask
+* Polars
+* Spark
+
+57. Pandas in Exploratory Data Analysis
+
+---
+
+Pandas is one of the most important libraries for Exploratory Data Analysis (EDA).
+
+EDA means examining a dataset to understand:
+
+* Data structure
+* Distribution
+* Missing values
+* Duplicate values
+* Relationships
+* Outliers
+* Statistical properties
+* Data quality
+
+Typical EDA steps:
+
+1. Load the dataset
+
+2. Check shape
+
+3. View first and last rows
+
+4. Check data types
+
+5. Check missing values
+
+6. Check duplicate values
+
+7. Generate descriptive statistics
+
+8. Analyze categorical columns
+
+9. Analyze numerical columns
+
+10. Investigate relationships between variables
+
+11. Pandas in Machine Learning
+
+---
+
+Pandas is commonly used before training a Machine Learning model.
+
+Example workflow:
+
+Dataset
+↓
+Pandas
+↓
+Data Cleaning
+↓
+Data Exploration
+↓
+Feature Selection
+↓
+Data Transformation
+↓
+Train/Test Split
+↓
+Scikit-learn
+↓
+Machine Learning Model
+
+Pandas itself does NOT train Machine Learning models.
+
+It prepares and manipulates the data that is later given to Machine Learning libraries such as Scikit-learn.
+
+59. Advantages of Pandas
+
+---
+
+1. Easy to Learn
+
+   * Provides a simple and readable syntax.
+
+2. Powerful Data Manipulation
+
+   * Makes filtering, sorting, grouping, merging, and transformation easier.
+
+3. Handles Missing Data
+
+   * Provides built-in functions for detecting and handling missing values.
+
+4. Supports Many Data Formats
+
+   * Can work with CSV, Excel, JSON, SQL, and other sources.
+
+5. Useful for Data Cleaning
+
+   * Provides many tools for preparing real-world datasets.
+
+6. Excellent for Data Analysis
+
+   * Provides descriptive statistics and aggregation functions.
+
+7. Works Well with NumPy
+
+   * Pandas is built on top of NumPy.
+
+8. Integrates with ML and Visualization Libraries
+
+   * Works well with Scikit-learn, Matplotlib, Seaborn, and other libraries.
+
+9. Widely Used
+
+   * Pandas is a major tool in the Python Data Science ecosystem.
+
+10. Disadvantages of Pandas
+
+---
+
+1. High Memory Usage
+
+   * Large DataFrames can consume a significant amount of RAM.
+
+2. Limited by Single-Machine Memory
+
+   * Traditional Pandas operations generally require the working dataset to fit into available memory.
+
+3. Can Become Slow for Very Large Datasets
+
+   * Extremely large datasets may be better handled using distributed or specialized data-processing tools.
+
+4. Advanced Operations Can Be Difficult
+
+   * Complex indexing, reshaping, merging, and groupby operations require practice.
+
+5. Not a Machine Learning Library
+
+   * Pandas prepares and analyzes data but does not provide the main algorithms used to train ML models.
+
+6. Pandas vs NumPy
+
+---
+
+Pandas:
+
+* Used mainly for tabular and structured data.
+* Provides Series and DataFrame.
+* Supports labeled rows and columns.
+* Excellent for data cleaning and analysis.
+* Can handle mixed data types across columns.
+
+NumPy:
+
+* Used mainly for numerical computation.
+* Provides multidimensional arrays.
+* Generally works with homogeneous data.
+* Excellent for mathematical and numerical operations.
+
+62. Pandas vs Excel
+
+---
+
+Pandas:
+
+* Python-based.
+* Can automate data-processing workflows.
+* Suitable for programming and Machine Learning pipelines.
+* Can handle large datasets better than typical spreadsheet workflows.
+* Integrates with other Python libraries.
+
+Excel:
+
+* Spreadsheet-based.
+* Very useful for manual analysis and visualization.
+* Easy for non-programmers.
+* Suitable for many small and medium-sized data-analysis tasks.
+
+63. Important Pandas Functions to Remember
+
+---
+
+Creating:
+
+pd.Series()
+pd.DataFrame()
+
+Reading:
+
+pd.read_csv()
+pd.read_excel()
+pd.read_json()
+pd.read_sql()
+
+Inspecting:
+
+df.head()
+df.tail()
+df.shape
+df.columns
+df.dtypes
+df.info()
+df.describe()
+
+Selecting:
+
+df["column"]
+df[["column1", "column2"]]
+df.loc[]
+df.iloc[]
+
+Cleaning:
+
+df.isnull()
+df.notnull()
+df.dropna()
+df.fillna()
+df.duplicated()
+df.drop_duplicates()
+
+Manipulation:
+
+df.sort_values()
+df.rename()
+df.drop()
+df.astype()
+df.apply()
+
+Analysis:
+
+df.groupby()
+df.mean()
+df.sum()
+df.count()
+df.min()
+df.max()
+df.median()
+df.value_counts()
+df.unique()
+df.nunique()
+
+Combining:
+
+pd.concat()
+pd.merge()
+df.join()
+
+Exporting:
+
+df.to_csv()
+df.to_excel()
+df.to_json()
+
+64. Important Concepts to Master
+
+---
+
+For Data Science and Machine Learning, the most important Pandas concepts to learn are:
+
+1. Series
+
+2. DataFrame
+
+3. Indexing
+
+4. Selecting rows and columns
+
+5. loc
+
+6. iloc
+
+7. Filtering
+
+8. Reading CSV files
+
+9. Inspecting datasets
+
+10. Missing-value handling
+
+11. Duplicate handling
+
+12. Sorting
+
+13. Adding and removing columns
+
+14. Data type conversion
+
+15. GroupBy
+
+16. Aggregation
+
+17. apply()
+
+18. String operations
+
+19. Date/time operations
+
+20. merge()
+
+21. concat()
+
+22. join()
+
+23. pivot_table()
+
+24. melt()
+
+25. Basic EDA
+
+26. Key Point
+
+---
+
+Pandas is primarily a tool for:
+
+DATA LOADING
++
+DATA CLEANING
++
+DATA MANIPULATION
++
+DATA ANALYSIS
++
+DATA PREPROCESSING
+
+It is one of the fundamental Python libraries for Data Science and Machine Learning.
