@@ -100,3 +100,75 @@ MSE contribution = 100
 Therefore, MSE is more sensitive to large errors than MAE.
 
 Lower MAE or MSE generally indicates a better regression model.
+
+
+
+RMSE (Root Mean Squared Error)
+------------------------------
+
+Definition:
+RMSE is a regression evaluation metric that measures the average size of prediction errors. It is the square root of MSE.
+
+Formula:
+RMSE = √[(1/n) * Σ (Actual Value - Predicted Value)^2]
+
+Where:
+n = number of data points
+Actual Value = real/observed value
+Predicted Value = value predicted by the model
+
+Example:
+Actual values:    10, 20, 30
+Predicted values: 12, 18, 25
+
+Errors:
+10 - 12 = -2
+20 - 18 = 2
+30 - 25 = 5
+
+Squared errors:
+(-2)^2 = 4
+(2)^2 = 4
+(5)^2 = 25
+
+MSE = (4 + 4 + 25) / 3 = 11
+
+RMSE = √11 = 3.32
+
+Interpretation:
+A lower RMSE means the model's predictions are closer to the actual values.
+
+RMSE is useful because it gives more importance to large errors and is expressed in the same unit as the target variable.
+
+Advantages of RMSE:
+- Easy to interpret because it has the same unit as the target variable.
+- Penalizes large errors more strongly.
+- Commonly used for evaluating regression models.
+
+Disadvantage of RMSE:
+- Sensitive to outliers because errors are squared.
+- Large errors can have a strong effect on the final RMSE.
+
+
+MAE vs MSE vs RMSE
+------------------
+
+MAE:
+- Uses absolute errors.
+- Less sensitive to outliers.
+- Easy to understand.
+- Same unit as the target variable.
+
+MSE:
+- Uses squared errors.
+- More sensitive to large errors and outliers.
+- Result is in squared units.
+
+RMSE:
+- Square root of MSE.
+- More sensitive to large errors.
+- Same unit as the target variable.
+- Easier to interpret than MSE.
+
+General rule:
+Lower MAE, MSE, or RMSE usually means better model performance.
