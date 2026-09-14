@@ -1,0 +1,102 @@
+MAE (Mean Absolute Error)
+-------------------------
+
+Definition:
+MAE is a regression evaluation metric that measures the average absolute difference between the actual values and the predicted values.
+
+Formula:
+MAE = (1/n) * Σ |Actual Value - Predicted Value|
+
+Where:
+n = number of data points
+Actual Value = real/observed value
+Predicted Value = value predicted by the model
+
+Example:
+Actual values:    10, 20, 30
+Predicted values: 12, 18, 25
+
+Errors:
+|10 - 12| = 2
+|20 - 18| = 2
+|30 - 25| = 5
+
+MAE = (2 + 2 + 5) / 3 = 3
+
+Interpretation:
+A lower MAE means the model's predictions are closer to the actual values.
+MAE is easy to understand because it uses the same unit as the target variable.
+
+Advantages of MAE:
+- Easy to understand and interpret.
+- Uses the same unit as the target variable.
+- Less affected by large errors compared to MSE.
+
+Disadvantage of MAE:
+- It does not penalize large errors as strongly as MSE.
+
+
+MSE (Mean Squared Error)
+------------------------
+
+Definition:
+MSE is a regression evaluation metric that measures the average squared difference between the actual values and the predicted values.
+
+Formula:
+MSE = (1/n) * Σ (Actual Value - Predicted Value)^2
+
+Where:
+n = number of data points
+Actual Value = real/observed value
+Predicted Value = value predicted by the model
+
+Example:
+Actual values:    10, 20, 30
+Predicted values: 12, 18, 25
+
+Errors:
+10 - 12 = -2
+20 - 18 = 2
+30 - 25 = 5
+
+Squared errors:
+(-2)^2 = 4
+(2)^2 = 4
+(5)^2 = 25
+
+MSE = (4 + 4 + 25) / 3 = 11
+
+Interpretation:
+A lower MSE means the model has better predictions.
+Because the errors are squared, MSE gives more importance to large errors.
+
+Advantages of MSE:
+- Strongly penalizes large errors.
+- Useful when large prediction errors are undesirable.
+- Commonly used as a loss function during model training.
+
+Disadvantage of MSE:
+- Sensitive to outliers because errors are squared.
+- The result is in squared units, so it can be harder to interpret.
+
+
+MAE vs MSE
+----------
+
+MAE uses absolute errors, while MSE uses squared errors.
+
+MAE treats errors more equally.
+MSE gives much more importance to large errors.
+
+Example:
+Error = 2
+MAE contribution = 2
+MSE contribution = 4
+
+Error = 10
+MAE contribution = 10
+MSE contribution = 100
+
+Therefore, MSE is more sensitive to large errors than MAE.
+
+Lower MAE or MSE generally indicates a better regression model.
