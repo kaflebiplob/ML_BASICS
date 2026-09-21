@@ -6,3 +6,31 @@ Computer only understand 0 and 1 so there is need of NLP to understand many lang
 Real World examples:  ChatGPT,Alexa,Siri
 
 examples like->Gmail Span Detection, Sentiment Analysis etc
+
+
+Approaches of NLP
+
+1. Rule-Based Approach (Old School NLP)
+
+Limitations:
+ i. Cant handle complex, ambigious, or new patterns
+ ii. Not scalable for large data
+
+2. Statistical (Machine Learning) Approach
+
+=> language is treated like data and algorithms learn patterns from it.
+   Use of models like Naive Bayes, Logistic regression, SVM etc
+
+   Requies text to be converted into numbers using techniques like Bag of Words, TFI-IDF etc
+
+Limitations:
+ i. Loses context of words (Like Sarcasm or sequench of words)
+ 
+3. Deep Learning Based Approach (Modern NLP)
+ Uses Neural Networks to automatically learn complex patterns and context from text.
+ models can understand meaning, context,word order and more.
+ Popular architectures:
+ RNN(Recurrent Neural Networks)
+ LSMT(Long short term memory)
+ Gru(Gated Recurrent Units)
+ Transformers(BERT,GPT,T5 etc)
