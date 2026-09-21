@@ -1,0 +1,18 @@
+## Step 1 => Gathering the Text (Getting the Data)
+
+1. Use pre-built public datasets.
+2. Web scraping.
+3. APIs.
+4. Manual collection / Crowdsourcing.
+5. Use NLP tools to automatically generate data (Text Augmentation).
+
+## Step 2 => Text Cleaning
+
+1. Convert all text to lowercase.
+2. Remove punctuation in ML tasks (e.g., `@#$%^&*`, etc.).
+3. Remove numbers (optional, depending on the task).
+4. Remove URLs/Links.
+5. Remove HTML tags.
+6. Remove emojis and special characters.
+7. Remove stopwords (e.g., `is`, `the`, `was`, `and`, `in`).
+8. Spelling correction (optional).
