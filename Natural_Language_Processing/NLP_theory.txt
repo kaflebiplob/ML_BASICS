@@ -1,0 +1,8 @@
+NLP->NLP (Natural Language Processing) is a branch of Artificial Intelligence (AI) that helps computers understand, interpret, and generate human language.
+
+Why do we need NLP?
+Computer only understand 0 and 1 so there is need of NLP to understand many languages.
+
+Real World examples:  ChatGPT,Alexa,Siri
+
+examples like->Gmail Span Detection, Sentiment Analysis etc
