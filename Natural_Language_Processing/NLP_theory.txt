@@ -1,36 +1,51 @@
-NLP->NLP (Natural Language Processing) is a branch of Artificial Intelligence (AI) that helps computers understand, interpret, and generate human language.
+# NLP
 
-Why do we need NLP?
-Computer only understand 0 and 1 so there is need of NLP to understand many languages.
+**NLP (Natural Language Processing)** is a branch of Artificial Intelligence (AI) that helps computers understand, interpret, and generate human language.
 
-Real World examples:  ChatGPT,Alexa,Siri
+## Why do we need NLP?
 
-examples like->Gmail Span Detection, Sentiment Analysis etc
+Computers understand information in the form of numbers (ultimately represented as 0s and 1s), so NLP is needed to help computers process and understand human languages.
 
+**Real-world examples:** ChatGPT, Alexa, Siri
 
-Approaches of NLP
+**Other examples:** Spam Detection in Gmail, Sentiment Analysis, etc.
 
-1. Rule-Based Approach (Old School NLP)
+## Approaches of NLP
 
-Limitations:
- i. Cant handle complex, ambigious, or new patterns
- ii. Not scalable for large data
+### 1. Rule-Based Approach (Old-School NLP)
 
-2. Statistical (Machine Learning) Approach
+Uses predefined rules to process and understand text.
 
-=> language is treated like data and algorithms learn patterns from it.
-   Use of models like Naive Bayes, Logistic regression, SVM etc
+**Limitations:**
 
-   Requies text to be converted into numbers using techniques like Bag of Words, TFI-IDF etc
+* Can't handle complex, ambiguous, or new patterns.
+* Not scalable for large amounts of data.
 
-Limitations:
- i. Loses context of words (Like Sarcasm or sequench of words)
- 
-3. Deep Learning Based Approach (Modern NLP)
- Uses Neural Networks to automatically learn complex patterns and context from text.
- models can understand meaning, context,word order and more.
- Popular architectures:
- RNN(Recurrent Neural Networks)
- LSMT(Long short term memory)
- Gru(Gated Recurrent Units)
- Transformers(BERT,GPT,T5 etc)
+### 2. Statistical (Machine Learning) Approach
+
+Language is treated as data, and machine learning algorithms learn patterns from it.
+
+**Models used:** Naive Bayes, Logistic Regression, SVM, etc.
+
+Text needs to be converted into numbers using techniques such as:
+
+* Bag of Words (BoW)
+* TF-IDF
+
+**Limitations:**
+
+* Can lose the context and meaning of words.
+* Struggles with things like sarcasm and the sequence of words.
+
+### 3. Deep Learning-Based Approach (Modern NLP)
+
+Uses neural networks to automatically learn complex patterns and context from text.
+
+Models can better understand meaning, context, word order, and more.
+
+**Popular architectures:**
+
+* RNN (Recurrent Neural Networks)
+* LSTM (Long Short-Term Memory)
+* GRU (Gated Recurrent Units)
+* Transformers (BERT, GPT, T5, etc.)
