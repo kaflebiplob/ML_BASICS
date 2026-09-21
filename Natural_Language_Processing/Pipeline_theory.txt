@@ -17,40 +17,134 @@
 7. Remove stopwords (e.g., `is`, `the`, `was`, `and`, `in`).
 8. Spelling correction (optional).
 
+**Example:**
 
-Step 3=> Feature Extraction/ Vectorization
+Original:
+`"I LOVE this movie!!! Visit https://example.com 😊"`
 
-1 One-hot Encoding
-pros 
- i. It is intutive (Can get sentence, words).
- ii. It is easy to implement
+After cleaning:
+`"i love this movie"`
 
-cons
- i. Sparsity (Too Big matrix) (to many zeros).
- ii. OOV (Out of Vocabulary)
- iii. Size Difference.
- iv. Semantic meaning.
+---
 
-2. Bag of Words (Bow)
-pros
- i. Easy to Implement.
- ii. Fixed Size
- iii. Work with Machine Learning.
- iv. Fast and efficient.
+## Step 3 => Feature Extraction / Vectorization
 
-cons
- i. Sparse Matrix.
- ii. Out of Vocabulary
- iii. Semantic Meaning (Better that one-hot encoding)
+Converting text into numerical form so that machine learning models can understand it.
 
- N Gram = can be called as Bag of ngrams.
-  pros
-   i. Semantic meaning (A little bit).
+### 1. One-Hot Encoding
 
+Each word is represented as a vector containing `0` and `1`.
 
-cons
- i. Dimensions increase.
- ii. Out of Vocabulary
+**Example:**
 
-3. TF-IDF
+Vocabulary:
+`["I", "love", "Python"]`
 
+`I` → `[1, 0, 0]`
+`love` → `[0, 1, 0]`
+`Python` → `[0, 0, 1]`
+
+**Pros:**
+
+* Intuitive and easy to understand.
+* Easy to implement.
+
+**Cons:**
+
+* **Sparsity:** Creates large matrices with many zeros.
+* **OOV (Out of Vocabulary):** Cannot handle unseen words.
+* **Size:** Vocabulary size can become very large.
+* **No semantic meaning:** Doesn't understand relationships between words.
+
+---
+
+### 2. Bag of Words (BoW)
+
+Represents text based on the frequency of words in a document. It ignores the order of words.
+
+**Example:**
+
+Sentence:
+`"I love Python and I love AI"`
+
+Vocabulary:
+`["I", "love", "Python", "and", "AI"]`
+
+BoW:
+`[2, 2, 1, 1, 1]`
+
+**Pros:**
+
+* Easy to implement.
+* Fixed-size vectors.
+* Works well with traditional Machine Learning models.
+* Fast and efficient.
+
+**Cons:**
+
+* Sparse matrix.
+* Out of Vocabulary problem.
+* Doesn't capture semantic meaning well.
+* Ignores word order.
+
+### N-Gram
+
+An N-Gram is a sequence of `N` consecutive words. It can also be called a **Bag of N-Grams** when used as features.
+
+**Example:**
+
+Sentence:
+`"I love machine learning"`
+
+**Unigram (1-Gram):**
+`I`, `love`, `machine`, `learning`
+
+**Bigram (2-Gram):**
+`I love`, `love machine`, `machine learning`
+
+**Pros:**
+
+* Captures some word order and context.
+* Provides slightly better semantic information than simple BoW.
+
+**Cons:**
+
+* Dimensions increase quickly.
+* Out of Vocabulary problem.
+
+---
+
+### 3. TF-IDF (Term Frequency-Inverse Document Frequency)
+
+TF-IDF gives higher importance to words that are frequent in a particular document but less frequent across the entire collection of documents.
+
+**TF (Term Frequency):**
+
+`TF = Number of occurrences of a term in a document / Total number of terms in the document`
+
+**Example:**
+
+Document:
+`"I love Python. Python is easy."`
+
+The word `Python` appears **2 times** out of **6 words**.
+
+`TF(Python) = 2/6`
+
+**IDF (Inverse Document Frequency):**
+
+`IDF = log(Total number of documents / Number of documents containing the term)`
+
+A common word appearing in many documents gets a lower IDF, while a rare word gets a higher IDF.
+
+**Pros:**
+
+* Useful for information retrieval.
+* Gives more importance to meaningful/rare words.
+
+**Cons:**
+
+* Sparse matrix.
+* Out of Vocabulary problem.
+* High dimensionality.
+* Does not fully capture semantic meaning.
