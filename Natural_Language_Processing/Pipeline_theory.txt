@@ -32,3 +32,25 @@ cons
  iv. Semantic meaning.
 
 2. Bag of Words (Bow)
+pros
+ i. Easy to Implement.
+ ii. Fixed Size
+ iii. Work with Machine Learning.
+ iv. Fast and efficient.
+
+cons
+ i. Sparse Matrix.
+ ii. Out of Vocabulary
+ iii. Semantic Meaning (Better that one-hot encoding)
+
+ N Gram = can be called as Bag of ngrams.
+  pros
+   i. Semantic meaning (A little bit).
+
+
+cons
+ i. Dimensions increase.
+ ii. Out of Vocabulary
+
+3. TF-IDF
+
