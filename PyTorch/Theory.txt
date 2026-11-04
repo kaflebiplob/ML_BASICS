@@ -2,3 +2,8 @@ What are Neural Networks?
 
 Neural networks are a type of machine learning model inspired by the human brain that learns patterns from data to make predictions or decisions.
 Example: A neural network can learn from pictures of cats and dogs and then predict whether a new picture contains a cat or a dog.
+
+GPU:Graphics processing unit
+TPU:Tensor processing unit
+
+tensors is an algebric object that describe miltilinear relationship between sets of algebraic object related to a vector space.
